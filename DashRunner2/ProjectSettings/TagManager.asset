@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Elevator
+  - AccelerateGround
+  - BounceDR
+  - BounceDL
+  - BounceUR
+  - BounceUL
+  - Ground
+  - Bullet
+  - Canno
+  - Coin
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Player
+  - Background
+  - Interactable
+  - Enemy
+  - Harzard
+  - Elevator
+  - Bullet
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1991673243
+    locked: 0
+  - name: Enemy
+    uniqueID: 1134536987
+    locked: 0
+  - name: Bounce
+    uniqueID: 2127562417
+    locked: 0
+  - name: Player
+    uniqueID: 222531945
+    locked: 0
+  - name: Foreground
+    uniqueID: 390370565
+    locked: 0
+  - name: Harzard
+    uniqueID: 2167854767
+    locked: 0
