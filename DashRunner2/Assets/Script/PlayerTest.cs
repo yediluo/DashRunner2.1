@@ -63,10 +63,16 @@ public class PlayerTest : MonoBehaviour
         }
         else
         {
+
+            //delay the animation count;
             if (animationCount >= 100)
             {
                 
-                SceneManager.LoadScene("GameOver");
+                //SceneManager.LoadScene("GameOver");
+                //pop up showing you are dead;
+                 //a button to reload the current level;
+
+                 //a button exit to the start scene;
             }else {
                 animationCount++;
 
