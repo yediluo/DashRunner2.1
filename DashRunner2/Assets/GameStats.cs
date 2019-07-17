@@ -16,23 +16,18 @@ public class GameStats : MonoBehaviour
 
     [SerializeField] Image [] coins;
     [SerializeField] GameObject pa;
-    [SerializeField] PlayerTest player;
-    [SerializeField] Text timeLeft;
     public int CoinCount;
     public string sceneName;
-    public float currentTime;
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<PlayerTest>();
        sceneName = SceneManager.GetActiveScene().name;
-        currentTime = Time.time;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeLimit();
         Debug.Log("coincount= " + CoinCount);
         if(CoinCount > 2)
         {
@@ -58,10 +53,7 @@ public class GameStats : MonoBehaviour
     {
         //display panel
         pa.SetActive(true);
-
-        //disable coiningame and  time text;
-        timeLeft.enabled = false;
-
+        //disable coiningame;
         coinsInGame[0].enabled = false;
         coinsInGame[1].enabled = false;
         coinsInGame[2].enabled = false;
@@ -87,24 +79,5 @@ public class GameStats : MonoBehaviour
         }
 
 
-    }
-
-    public void timeLimit()
-    {
-        if ((Time.time - currentTime) < 15)
-        {
-            Debug.Log("Time+ = " + (Time.time - currentTime));
-            timeLeft.text = ("TimeLeft: = " + (Time.time - currentTime));
-        }
-        else
-        {
-            if (player.isAlive)
-            {
-                timeLeft.text = ("TimeLeft: = " + (Time.time - currentTime));
-
-                player.deathMove();
-            }
-           
-        }
     }
 }
