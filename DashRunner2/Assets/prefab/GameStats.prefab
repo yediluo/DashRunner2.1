@@ -47,3 +47,7 @@ MonoBehaviour:
   coin2: {fileID: 0}
   coin3: {fileID: 0}
   CoinCount: 0
+<<<<<<< HEAD
+=======
+  sceneName: 
+>>>>>>> parent of 0ceb4c3... Timelimit 15 second prototype
