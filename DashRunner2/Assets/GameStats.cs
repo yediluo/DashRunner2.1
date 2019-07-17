@@ -2,60 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
+
+
+/// <summary>
+/// for all the UI and interface transition, reload scene etc
+/// 
+/// </summary>
 public class GameStats : MonoBehaviour
 {
-<<<<<<< HEAD
-    [SerializeField] Image coin1;
-    [SerializeField] Image coin2;
-    [SerializeField] Image coin3;
-    public int CoinCount;
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-=======
     [SerializeField] Image [] coinsInGame;
 
     [SerializeField] Image [] coins;
     [SerializeField] GameObject pa;
+    [SerializeField] PlayerTest player;
+    [SerializeField] Text timeLeft;
     public int CoinCount;
     public string sceneName;
+    public float currentTime;
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<PlayerTest>();
        sceneName = SceneManager.GetActiveScene().name;
-
-<<<<<<< HEAD
->>>>>>> parent of 0ceb4c3... Timelimit 15 second prototype
-=======
->>>>>>> parent of 0ceb4c3... Timelimit 15 second prototype
+        currentTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timeLimit();
         Debug.Log("coincount= " + CoinCount);
         if(CoinCount > 2)
         {
-            coin3.color = new Vector4(255, 255, 255, 255);
-            coin2.color = new Vector4(255, 255, 255, 255);
-            coin1.color = new Vector4(255, 255, 255, 255);
+            coinsInGame[0].color = new Vector4(255, 255, 255, 255);
+            coinsInGame[1].color = new Vector4(255, 255, 255, 255);
+            coinsInGame[2].color = new Vector4(255, 255, 255, 255);
 
         }
         else if (CoinCount > 1) {
-            coin2.color = new Vector4(255, 255, 255, 255);
-            coin1.color = new Vector4(255, 255, 255, 255);
+            coinsInGame[0].color = new Vector4(255, 255, 255, 255);
+            coinsInGame[1].color = new Vector4(255, 255, 255, 255);
 
 
         }
         else if (CoinCount > 0) {
 
-<<<<<<< HEAD
-            coin1.color = new Vector4(255, 255, 255, 255);
-        }
-    }
-=======
             coinsInGame[0].color = new Vector4(255, 255, 255, 255);
         }
     }
@@ -65,7 +58,10 @@ public class GameStats : MonoBehaviour
     {
         //display panel
         pa.SetActive(true);
-        //disable coiningame;
+
+        //disable coiningame and  time text;
+        timeLeft.enabled = false;
+
         coinsInGame[0].enabled = false;
         coinsInGame[1].enabled = false;
         coinsInGame[2].enabled = false;
@@ -92,8 +88,23 @@ public class GameStats : MonoBehaviour
 
 
     }
-<<<<<<< HEAD
->>>>>>> parent of 0ceb4c3... Timelimit 15 second prototype
-=======
->>>>>>> parent of 0ceb4c3... Timelimit 15 second prototype
+
+    public void timeLimit()
+    {
+        if ((Time.time - currentTime) < 15)
+        {
+            Debug.Log("Time+ = " + (Time.time - currentTime));
+            timeLeft.text = ("TimeLeft: = " + (Time.time - currentTime));
+        }
+        else
+        {
+            if (player.isAlive)
+            {
+                timeLeft.text = ("TimeLeft: = " + (Time.time - currentTime));
+
+                player.deathMove();
+            }
+           
+        }
+    }
 }
