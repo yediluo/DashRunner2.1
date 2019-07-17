@@ -65,4 +65,9 @@ public class LoadNextScene : MonoBehaviour
         SceneManager.LoadScene(7);
     }
 
+    public void loadCurrent()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }

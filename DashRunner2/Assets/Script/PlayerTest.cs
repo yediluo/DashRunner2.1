@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.UI;
+
 
 public class PlayerTest : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float AccelerateMultiplier = 1f;
     [SerializeField] AudioClip PlayerBumpSFX;
+    [SerializeField] GameStats gs;
     public Rigidbody2D rb;
     public BoxCollider2D myBodyCollider;
     public Animator myAnimator;
-
+     
 
     //state
     private float t = 0.0f;
@@ -40,11 +43,11 @@ public class PlayerTest : MonoBehaviour
 
     void Start()
     {
-
         originalSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
         myBodyCollider = GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
+        gs = FindObjectOfType<GameStats>();
     }
 
     void Update()
@@ -65,9 +68,11 @@ public class PlayerTest : MonoBehaviour
         {
             if (animationCount >= 100)
             {
-                
-                SceneManager.LoadScene("GameOver");
-            }else {
+
+                //SceneManager.LoadScene("GameOver");
+                // pa.SetActive(true);
+                gs.deathPanel();
+            } else {
                 animationCount++;
 
             }
@@ -234,6 +239,7 @@ public class PlayerTest : MonoBehaviour
         myAnimator.SetTrigger("Dying");
         rb.bodyType = RigidbodyType2D.Static;
         myBodyCollider.enabled = false;
+
     }
 
     //check if the player is caught in the middle of the bounce
