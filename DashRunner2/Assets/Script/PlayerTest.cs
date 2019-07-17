@@ -22,7 +22,7 @@ public class PlayerTest : MonoBehaviour
     private bool moving = false;
     float directionH;
     float directionY;
-    bool isAlive = true;
+    public bool isAlive = true;
     String playerPState = "Idle";
 
 

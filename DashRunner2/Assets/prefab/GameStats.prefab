@@ -43,8 +43,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea1e826379438845a573f2a8fb72fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin1: {fileID: 0}
-  coin2: {fileID: 0}
-  coin3: {fileID: 0}
+  coinsInGame:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  coins:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  pa: {fileID: 0}
+  player: {fileID: 0}
+  timeLeft: {fileID: 0}
   CoinCount: 0
   sceneName: 
+  currentTime: 0
