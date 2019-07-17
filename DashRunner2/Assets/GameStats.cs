@@ -26,6 +26,9 @@ public class GameStats : MonoBehaviour
     {
        sceneName = SceneManager.GetActiveScene().name;
 
+<<<<<<< HEAD
+>>>>>>> parent of 0ceb4c3... Timelimit 15 second prototype
+=======
 >>>>>>> parent of 0ceb4c3... Timelimit 15 second prototype
     }
 
@@ -89,5 +92,8 @@ public class GameStats : MonoBehaviour
 
 
     }
+<<<<<<< HEAD
+>>>>>>> parent of 0ceb4c3... Timelimit 15 second prototype
+=======
 >>>>>>> parent of 0ceb4c3... Timelimit 15 second prototype
 }
