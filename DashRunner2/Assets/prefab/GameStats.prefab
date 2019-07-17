@@ -47,4 +47,3 @@ MonoBehaviour:
   coin2: {fileID: 0}
   coin3: {fileID: 0}
   CoinCount: 0
-  sceneName: 
