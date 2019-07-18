@@ -12,12 +12,22 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GameStats : MonoBehaviour
 {
-    [SerializeField] Image [] coinsInGame;
+    //config
+    [SerializeField] Image[] coinsInWinPanel;
 
-    [SerializeField] Image [] coins;
-    [SerializeField] GameObject pa;
-    [SerializeField] PlayerTest player;
+    //ingame coin 
+    [SerializeField] Image [] coinsInGame;
+    //deathpanel coin 
+    [SerializeField] Image [] coinsInDeathPanel;
+    [SerializeField] GameObject deathPa;
+    [SerializeField] GameObject winPa;
     [SerializeField] Text timeLeft;
+    [SerializeField] float timeMax;
+
+
+    //support
+
+    PlayerTest player;
     public int CoinCount;
     public string sceneName;
     public float currentTime;
@@ -53,11 +63,11 @@ public class GameStats : MonoBehaviour
         }
     }
 
-    
-    public void deathPanel()
-    {
-        //display panel
-        pa.SetActive(true);
+
+
+
+    public void winPanel() {
+        winPa.SetActive(true);
 
         //disable coiningame and  time text;
         timeLeft.enabled = false;
@@ -68,22 +78,57 @@ public class GameStats : MonoBehaviour
         //show coin in panel;
         if (CoinCount > 2)
         {
-            coins[0].color = new Vector4(255, 255, 255, 255);
-            coins[1].color = new Vector4(255, 255, 255, 255);
-            coins[2].color = new Vector4(255, 255, 255, 255);
+            coinsInWinPanel[0].color = new Vector4(255, 255, 255, 255);
+            coinsInWinPanel[1].color = new Vector4(255, 255, 255, 255);
+            coinsInWinPanel[2].color = new Vector4(255, 255, 255, 255);
 
         }
         else if (CoinCount > 1)
         {
-            coins[1].color = new Vector4(255, 255, 255, 255);
-            coins[0].color = new Vector4(255, 255, 255, 255);
+            coinsInWinPanel[1].color = new Vector4(255, 255, 255, 255);
+            coinsInWinPanel[0].color = new Vector4(255, 255, 255, 255);
 
 
         }
         else if (CoinCount > 0)
         {
 
-            coins[0].color = new Vector4(255, 255, 255, 255);
+            coinsInWinPanel[0].color = new Vector4(255, 255, 255, 255);
+        }
+
+
+    }
+
+    public void deathPanel()
+    {
+        //display panel
+        deathPa.SetActive(true);
+
+        //disable coiningame and  time text;
+        timeLeft.enabled = false;
+
+        coinsInGame[0].enabled = false;
+        coinsInGame[1].enabled = false;
+        coinsInGame[2].enabled = false;
+        //show coin in panel;
+        if (CoinCount > 2)
+        {
+            coinsInDeathPanel[0].color = new Vector4(255, 255, 255, 255);
+            coinsInDeathPanel[1].color = new Vector4(255, 255, 255, 255);
+            coinsInDeathPanel[2].color = new Vector4(255, 255, 255, 255);
+
+        }
+        else if (CoinCount > 1)
+        {
+            coinsInDeathPanel[1].color = new Vector4(255, 255, 255, 255);
+            coinsInDeathPanel[0].color = new Vector4(255, 255, 255, 255);
+
+
+        }
+        else if (CoinCount > 0)
+        {
+
+            coinsInDeathPanel[0].color = new Vector4(255, 255, 255, 255);
         }
 
 
@@ -91,7 +136,7 @@ public class GameStats : MonoBehaviour
 
     public void timeLimit()
     {
-        if ((Time.time - currentTime) < 15)
+        if ((Time.time - currentTime) < timeMax)
         {
             Debug.Log("Time+ = " + (Time.time - currentTime));
             timeLeft.text = ("TimeLeft: = " + (Time.time - currentTime));

@@ -6,15 +6,23 @@ using UnityEngine.SceneManagement;
 public class LoadNextScene : MonoBehaviour
 {
     SpriteRenderer mySR;
+    [SerializeField] GameStats gs;
+    PlayerTest player;
+    
     private void Start()
     {
         mySR = GetComponent<SpriteRenderer>();
+        gs = FindObjectOfType<GameStats>();
+        player = FindObjectOfType<PlayerTest>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         mySR.enabled = false;
-        //load Next Scene
-        LoadScene();
+        //show win panel
+        //        LoadScene();
+        player.rb.bodyType = RigidbodyType2D.Static;
+        gs.winPanel();
+
     }
 
     public void LoadScene()

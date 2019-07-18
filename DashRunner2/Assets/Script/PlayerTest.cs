@@ -35,8 +35,7 @@ public class PlayerTest : MonoBehaviour
     bool leftBouncerDR = true;
     bool leftBouncerUL = true;
     bool leftBouncerUR = true;
-    int animationCount = 0;
-    int collisionCount = 0;
+   // int collisionCount = 0;
     bool isCornerEulerSet = false;
   //  bool isAccelerating = false;
     public bool canPlayBump = false;
@@ -62,20 +61,14 @@ public class PlayerTest : MonoBehaviour
             movingFourWay();
             // movingBasic();
             playerDeath();
-            animationCount = 0;
         }
         else
         {
-            if (animationCount >= 100)
-            {
 
                 //SceneManager.LoadScene("GameOver");
                 // pa.SetActive(true);
                 gs.deathPanel();
-            } else {
-                animationCount++;
 
-            }
         }
     }
 
