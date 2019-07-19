@@ -23,6 +23,8 @@ public class GameStats : MonoBehaviour
     [SerializeField] GameObject winPa;
     [SerializeField] Text timeLeft;
     [SerializeField] float timeMax;
+    [SerializeField] Image Battery;
+    [SerializeField] Sprite[] batterySprites;
 
 
     //support
@@ -138,10 +140,76 @@ public class GameStats : MonoBehaviour
     {
         if ((Time.time - currentTime) < timeMax)
         {
+            float timeRemaining = timeMax - (Time.time - currentTime);
+            float batteryPercentage = timeRemaining / timeMax;
             Debug.Log("Time+ = " + (Time.time - currentTime));
-            timeLeft.text = ("TimeLeft: = " + (Time.time - currentTime));
-        }
-        else
+            
+            //timeLeft.text = ("TimeLeft: = " + (Time.time - currentTime));
+            if(batteryPercentage > 11f/12f)
+            {
+                Battery.sprite = batterySprites[0];
+            }else if(batteryPercentage > 11f / 12f)
+            {
+                Battery.sprite = batterySprites[0];
+
+            }
+            else if(batteryPercentage > 10f / 12f)
+            {
+                Battery.sprite = batterySprites[1];
+
+            }
+            else if (batteryPercentage > 9f / 12f)
+            {
+                Battery.sprite = batterySprites[2];
+
+            }
+            else if (batteryPercentage > 8f / 12f)
+            {
+                Battery.sprite = batterySprites[3];
+
+            }
+            else if (batteryPercentage > 7f / 12f)
+            {
+                Battery.sprite = batterySprites[4];
+
+            }
+            else if (batteryPercentage > 6f / 12f)
+            {
+                Battery.sprite = batterySprites[5];
+
+            }
+            else if (batteryPercentage > 5f / 12f)
+            {
+                Battery.sprite = batterySprites[6];
+
+            }
+            else if (batteryPercentage > 4f / 12f)
+            {
+                Battery.sprite = batterySprites[7];
+
+            }
+            else if (batteryPercentage > 3f / 12f)
+            {
+                Battery.sprite = batterySprites[8];
+
+            }
+            else if(batteryPercentage > 2f / 12f)
+            {
+                Battery.sprite = batterySprites[9];
+
+            }
+            else if(batteryPercentage > 1f / 12f)
+            {
+                Battery.sprite = batterySprites[10];
+
+            }
+            else {
+                Battery.sprite = batterySprites[11];
+
+            }
+
+
+        } else
         {
             if (player.isAlive)
             {

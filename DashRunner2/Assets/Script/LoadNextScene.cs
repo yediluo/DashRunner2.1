@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LoadNextScene : MonoBehaviour
 {
     SpriteRenderer mySR;
-    [SerializeField] GameStats gs;
+    GameStats gs;
     PlayerTest player;
     
     private void Start()
