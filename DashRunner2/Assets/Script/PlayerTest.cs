@@ -6,6 +6,7 @@ using System;
 using UnityEngine.UI;
 
 
+
 public class PlayerTest : MonoBehaviour
 {
     [SerializeField] float speed;
@@ -51,7 +52,7 @@ public class PlayerTest : MonoBehaviour
 
     void Update()
     {
-        
+       
         if (isAlive)
         {
             PlayerAnimation();
@@ -72,6 +73,12 @@ public class PlayerTest : MonoBehaviour
         }
     }
 
+    public void touchInputManager()
+    {
+        Touch touch = Input.GetTouch(0);
+        directionH = touch.deltaPosition.x;
+        directionY = touch.deltaPosition.y;
+    }
     private void PlayerAnimation()
     {
  
@@ -190,7 +197,16 @@ public class PlayerTest : MonoBehaviour
     {
         directionH = Input.GetAxis("Horizontal");
         directionY = Input.GetAxis("Vertical");
-
+       
+       /* Touch touch = Input.GetTouch(0);
+        float directionHT = touch.deltaPosition.x;
+        float directionYT = touch.deltaPosition.y;
+        //checktouch enabled or not;
+        if (Input.touchCount == 2)
+        {
+            directionH = directionHT;
+            directionY = directionYT;
+        }*/
         if (directionH > 0)
         {
 
@@ -228,10 +244,14 @@ public class PlayerTest : MonoBehaviour
 
     public void deathMove()
     {
-        isAlive = false;
-        myAnimator.SetTrigger("Dying");
-        rb.bodyType = RigidbodyType2D.Static;
-        myBodyCollider.enabled = false;
+        // win then no more timelimit death
+        if (!gs.touchDown)
+        {
+            isAlive = false;
+            myAnimator.SetTrigger("Dying");
+            rb.bodyType = RigidbodyType2D.Static;
+            myBodyCollider.enabled = false;
+        }
 
     }
 

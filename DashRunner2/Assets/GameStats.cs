@@ -22,9 +22,9 @@ public class GameStats : MonoBehaviour
     [SerializeField] GameObject deathPa;
     [SerializeField] GameObject winPa;
     [SerializeField] Text timeLeft;
-    [SerializeField] float timeMax;
     [SerializeField] Image Battery;
     [SerializeField] Sprite[] batterySprites;
+    float timeMax;
 
 
     //support
@@ -33,17 +33,22 @@ public class GameStats : MonoBehaviour
     public int CoinCount;
     public string sceneName;
     public float currentTime;
+    //whether player touched destinatation or not;
+    public bool touchDown;
     // Start is called before the first frame update
     void Start()
     {
+        touchDown = false;
         player = FindObjectOfType<PlayerTest>();
        sceneName = SceneManager.GetActiveScene().name;
         currentTime = Time.time;
+        timeMax = 30f;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         timeLimit();
         Debug.Log("coincount= " + CoinCount);
         if(CoinCount > 2)
@@ -69,6 +74,11 @@ public class GameStats : MonoBehaviour
 
 
     public void winPanel() {
+
+        //disable battery image;
+        Battery.enabled = false;
+
+
         winPa.SetActive(true);
 
         //disable coiningame and  time text;
@@ -103,6 +113,9 @@ public class GameStats : MonoBehaviour
 
     public void deathPanel()
     {
+
+        //disable battery image;
+        Battery.enabled = false;
         //display panel
         deathPa.SetActive(true);
 
@@ -213,7 +226,7 @@ public class GameStats : MonoBehaviour
         {
             if (player.isAlive)
             {
-                timeLeft.text = ("TimeLeft: = " + (Time.time - currentTime));
+               // timeLeft.text = ("TimeLeft: = " + (Time.time - currentTime));
 
                 player.deathMove();
             }

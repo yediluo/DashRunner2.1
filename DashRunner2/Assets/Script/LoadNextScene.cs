@@ -22,6 +22,7 @@ public class LoadNextScene : MonoBehaviour
         //        LoadScene();
         player.rb.bodyType = RigidbodyType2D.Static;
         gs.winPanel();
+        gs.touchDown = true;
 
     }
 

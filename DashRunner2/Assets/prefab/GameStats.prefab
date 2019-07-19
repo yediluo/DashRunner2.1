@@ -58,7 +58,20 @@ MonoBehaviour:
   deathPa: {fileID: 0}
   winPa: {fileID: 0}
   timeLeft: {fileID: 0}
-  timeMax: 9999
+  Battery: {fileID: 0}
+  batterySprites:
+  - {fileID: -6128161011802207946, guid: a46e8b221cb754ac982d43ffbde96844, type: 3}
+  - {fileID: 1019566430862529664, guid: a46e8b221cb754ac982d43ffbde96844, type: 3}
+  - {fileID: 2691640799600690044, guid: a46e8b221cb754ac982d43ffbde96844, type: 3}
+  - {fileID: -1490492294083635188, guid: a46e8b221cb754ac982d43ffbde96844, type: 3}
+  - {fileID: 3278015864414559569, guid: fbab39cf9fc034598aa26b3b1aca8c33, type: 3}
+  - {fileID: 6036133712928814452, guid: fbab39cf9fc034598aa26b3b1aca8c33, type: 3}
+  - {fileID: 6186096796261157211, guid: fbab39cf9fc034598aa26b3b1aca8c33, type: 3}
+  - {fileID: -1204986674463795279, guid: fbab39cf9fc034598aa26b3b1aca8c33, type: 3}
+  - {fileID: 8751964478392187600, guid: 05f3a6e1a6d814c21b5bb35b63c0b31a, type: 3}
+  - {fileID: -708941435607316227, guid: 05f3a6e1a6d814c21b5bb35b63c0b31a, type: 3}
+  - {fileID: -4981577884633574001, guid: 05f3a6e1a6d814c21b5bb35b63c0b31a, type: 3}
+  - {fileID: 8700256852154089185, guid: 05f3a6e1a6d814c21b5bb35b63c0b31a, type: 3}
   CoinCount: 0
   sceneName: 
   currentTime: 0
