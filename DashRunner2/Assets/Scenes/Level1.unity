@@ -1890,12 +1890,12 @@ PrefabInstance:
     - target: {fileID: 329810670649011952, guid: 4ac17c1ed33d28a4db2655aaa3eda248,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.5
+      value: -14.296429
       objectReference: {fileID: 0}
     - target: {fileID: 329810670649011952, guid: 4ac17c1ed33d28a4db2655aaa3eda248,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -1.5021949
       objectReference: {fileID: 0}
     - target: {fileID: 329810670649011952, guid: 4ac17c1ed33d28a4db2655aaa3eda248,
         type: 3}
@@ -41453,6 +41453,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9189891065768749509, guid: 95a26c7576b7cc14ba18496fc21e57ec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189891065768749509, guid: 95a26c7576b7cc14ba18496fc21e57ec,
+        type: 3}
+      propertyPath: m_Name
+      value: DeathPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 9189891065052187603, guid: 95a26c7576b7cc14ba18496fc21e57ec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41557,16 +41567,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9189891065768749509, guid: 95a26c7576b7cc14ba18496fc21e57ec,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9189891065768749509, guid: 95a26c7576b7cc14ba18496fc21e57ec,
-        type: 3}
-      propertyPath: m_Name
-      value: DeathPanel
       objectReference: {fileID: 0}
     - target: {fileID: 9189891065052187567, guid: 95a26c7576b7cc14ba18496fc21e57ec,
         type: 3}
