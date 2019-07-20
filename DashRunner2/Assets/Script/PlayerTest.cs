@@ -73,11 +73,44 @@ public class PlayerTest : MonoBehaviour
         }
     }
 
-    public void touchInputManager()
+    public void touchControl()
     {
-        Touch touch = Input.GetTouch(0);
-        directionH = touch.deltaPosition.x;
-        directionY = touch.deltaPosition.y;
+        var fingers = Lean.Touch.LeanTouch.Fingers;
+
+        Debug.Log("There are currently " + fingers.Count + " fingers touching the screen.");
+        if (fingers.Count != 0)
+        {
+            var x = fingers[0].SwipeScaledDelta.x;
+            var y = fingers[0].SwipeScaledDelta.y;
+            Debug.Log(fingers[0].SwipeScaledDelta);
+
+            if (Mathf.Abs(x) > Mathf.Abs(y))
+            {
+                if (x > 0)
+                {
+                    Debug.Log("Right");
+                    directionH = 1;
+                }
+                else if (x < 0)
+                {
+                    Debug.Log("Left");
+                    directionH = -1;
+                }
+            }
+            else if (Mathf.Abs(x) < Mathf.Abs(y))
+            {
+                if (y > 0)
+                {
+                    Debug.Log("Up");
+                    directionY = 1;
+                }
+                else if (y < 0)
+                {
+                    Debug.Log("Down");
+                    directionY = -1;
+                }
+            }
+        }
     }
     private void PlayerAnimation()
     {
@@ -195,8 +228,11 @@ public class PlayerTest : MonoBehaviour
 
     private void movingBasic()
     {
+        
         directionH = Input.GetAxis("Horizontal");
         directionY = Input.GetAxis("Vertical");
+        //touch control replace the keyentry;
+        touchControl();
        
        /* Touch touch = Input.GetTouch(0);
         float directionHT = touch.deltaPosition.x;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float scale;
     Rigidbody2D myRigidBody;
 
     // Start is called before the first frame update
@@ -37,7 +38,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.tag != "Player")
         {
-            transform.localScale = new Vector2(-(Mathf.Sign(myRigidBody.velocity.x)), 1f);
+            transform.localScale = new Vector2(-(Mathf.Sign(myRigidBody.velocity.x))*0.8f, 1f*0.8f);
+
         }
     }
 
