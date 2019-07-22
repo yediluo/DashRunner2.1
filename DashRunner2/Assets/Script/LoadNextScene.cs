@@ -28,7 +28,7 @@ public class LoadNextScene : MonoBehaviour
 
     public void LoadScene()
     {
-        if (SceneManager.GetActiveScene().name=="Level6")
+        if (SceneManager.GetActiveScene().name=="Level6"|| SceneManager.GetActiveScene().name == "LevelS")
         {
             SceneManager.LoadScene(0);
         }
