@@ -13,6 +13,9 @@ public class PlayerTest : MonoBehaviour
     [SerializeField] float AccelerateMultiplier = 1f;
     [SerializeField] AudioClip PlayerBumpSFX;
     [SerializeField] GameStats gs;
+
+
+    public int Level;
     public Rigidbody2D rb;
     public BoxCollider2D myBodyCollider;
     public Animator myAnimator;
@@ -43,6 +46,7 @@ public class PlayerTest : MonoBehaviour
 
     void Start()
     {
+        Level = SceneManager.GetActiveScene().buildIndex - 1;
         originalSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
         myBodyCollider = GetComponent<BoxCollider2D>();
