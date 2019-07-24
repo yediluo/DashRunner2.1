@@ -326,12 +326,16 @@ MonoBehaviour:
   AccelerateMultiplier: 3
   PlayerBumpSFX: {fileID: 8300000, guid: 4b8a3e138880244468939c6faf5bde60, type: 3}
   gs: {fileID: 0}
+  Level: 0
+  MaxCoinCount: 000000000000000000000000000000000000000000000000
   rb: {fileID: 0}
   myBodyCollider: {fileID: 0}
   myAnimator: {fileID: 0}
   isAlive: 1
   originalSpeed: 0
   canPlayBump: 0
+  data:
+    LevelInfos: 
 --- !u!212 &4628201287684546303
 SpriteRenderer:
   m_ObjectHideFlags: 0

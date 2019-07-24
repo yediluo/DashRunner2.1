@@ -16,6 +16,7 @@ public class PlayerTest : MonoBehaviour
 
 
     public int Level;
+    public int[] MaxCoinCount;
     public Rigidbody2D rb;
     public BoxCollider2D myBodyCollider;
     public Animator myAnimator;
@@ -43,10 +44,16 @@ public class PlayerTest : MonoBehaviour
     bool isCornerEulerSet = false;
   //  bool isAccelerating = false;
     public bool canPlayBump = false;
-
+    public PlayerData data;
+    private void Awake()
+    {
+        Level = SceneManager.GetActiveScene().buildIndex - 2;
+        //   Debug.Log(MaxCoinCount[0]);
+        Debug.Log(MaxCoinCount[0].ToString());
+        data = SaveSystem.LoadPlayer();
+    }
     void Start()
     {
-        Level = SceneManager.GetActiveScene().buildIndex - 1;
         originalSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
         myBodyCollider = GetComponent<BoxCollider2D>();
@@ -56,7 +63,19 @@ public class PlayerTest : MonoBehaviour
 
     void Update()
     {
-       
+       if(gs.touchDown)
+        {
+            for(int i = 0; i<data.LevelInfos.Length; i++)
+            {
+                    MaxCoinCount[i] = data.LevelInfos[i];
+                
+            }
+            if (MaxCoinCount[Level] < gs.CoinCount) {
+                MaxCoinCount[Level] = gs.CoinCount;
+            }
+            SaveSystem.SavePlayer(this);
+
+        }
         if (isAlive)
         {
             PlayerAnimation();
