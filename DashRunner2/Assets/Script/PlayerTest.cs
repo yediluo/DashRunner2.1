@@ -63,6 +63,8 @@ public class PlayerTest : MonoBehaviour
 
     void Update()
     {
+
+        //save playerData
        if(gs.touchDown)
         {
             for(int i = 0; i<data.LevelInfos.Length; i++)
