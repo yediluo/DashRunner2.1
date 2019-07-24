@@ -17,6 +17,7 @@ public class PlayerTest : MonoBehaviour
 
     public int Level;
     public int[] MaxCoinCount;
+    public int maxLevel;
     public Rigidbody2D rb;
     public BoxCollider2D myBodyCollider;
     public Animator myAnimator;
@@ -48,7 +49,7 @@ public class PlayerTest : MonoBehaviour
     private void Awake()
     {
         Level = SceneManager.GetActiveScene().buildIndex - 2;
-        //   Debug.Log(MaxCoinCount[0]);
+        
         Debug.Log(MaxCoinCount[0].ToString());
         data = SaveSystem.LoadPlayer();
     }
@@ -70,10 +71,17 @@ public class PlayerTest : MonoBehaviour
             for(int i = 0; i<data.LevelInfos.Length; i++)
             {
                     MaxCoinCount[i] = data.LevelInfos[i];
-                
+                         
             }
             if (MaxCoinCount[Level] < gs.CoinCount) {
                 MaxCoinCount[Level] = gs.CoinCount;
+            }
+            if(data.CurrentLevel < Level)
+            {
+                maxLevel = Level;
+            }else
+            {
+                maxLevel = data.CurrentLevel;
             }
             SaveSystem.SavePlayer(this);
 

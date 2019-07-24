@@ -15,19 +15,29 @@ public class SLLS : MonoBehaviour
         {
             for (int i = 0; i < data.LevelInfos.Length; i++)
             {
-                levelSButtons[i].GetComponentInChildren<Text>().text = data.LevelInfos[i].ToString();
+                levelSButtons[i].GetComponentInChildren<Text>().text = data.LevelInfos[i].ToString() + " " + data.CurrentLevel;
 
             }
-        }else
+        }
+        else
         {
             SaveSystem.SavePlayer(player);
             data = SaveSystem.LoadPlayer();
             for (int i = 0; i < data.LevelInfos.Length; i++)
             {
-                levelSButtons[i].GetComponentInChildren<Text>().text = data.LevelInfos[i].ToString();
+                levelSButtons[i].GetComponentInChildren<Text>().text = data.LevelInfos[i].ToString()+" "+ data.CurrentLevel;
 
             }
+
+
         }
+        for (int i = 0; i<=data.CurrentLevel;i++)
+        {
+            levelSButtons[i].image.color = Color.black;
+            levelSButtons[i].enabled = true;
+            levelSButtons[i+1].enabled = true;    
+        }
+
 
     }
 
