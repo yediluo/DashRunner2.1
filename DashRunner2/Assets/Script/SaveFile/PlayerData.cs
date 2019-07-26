@@ -7,10 +7,8 @@ using UnityEngine.SceneManagement;
 [System.Serializable]
 public class PlayerData {
     //SAVE DATA
-    //how many coin did the player collect each level
 
     public int[] LevelInfos;
-    // the lastest progress;
     public int CurrentLevel;
 
 

@@ -31,8 +31,6 @@ public class SLLS : MonoBehaviour
 
 
         }
-
-        //LevelLock;
         for (int i = 0; i<=data.CurrentLevel;i++)
         {
             levelSButtons[i].image.color = Color.black;
