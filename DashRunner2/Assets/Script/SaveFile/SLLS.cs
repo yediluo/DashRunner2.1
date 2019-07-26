@@ -15,21 +15,23 @@ public class SLLS : MonoBehaviour
         data = SaveSystem.LoadPlayer();
         if (data != null)
         {
-            for (int i = 0; i < data.LevelInfos.Length; i++)
+
+            //show level coin count and level info
+         /*   for (int i = 0; i < data.LevelInfos.Length; i++)
             {
                 levelSButtons[i].GetComponentInChildren<Text>().text = data.LevelInfos[i].ToString() + " " + data.CurrentLevel;
 
-            }
+            }*/
         }
         else
         {
             SaveSystem.SavePlayer(player);
             data = SaveSystem.LoadPlayer();
-            for (int i = 0; i < data.LevelInfos.Length; i++)
+           /* for (int i = 0; i < data.LevelInfos.Length; i++)
             {
                 levelSButtons[i].GetComponentInChildren<Text>().text = data.LevelInfos[i].ToString()+" "+ data.CurrentLevel;
 
-            }
+            }*/
 
 
         }
