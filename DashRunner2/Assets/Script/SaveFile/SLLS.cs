@@ -9,7 +9,7 @@ public class SLLS : MonoBehaviour
     [SerializeField] Button[] levelSButtons;
     [SerializeField] PlayerTest player;
     [SerializeField] Sprite[] LevelLogo;
-
+    [SerializeField] Sprite[] Coins;
     private void Awake()
     {
         data = SaveSystem.LoadPlayer();
@@ -40,6 +40,13 @@ public class SLLS : MonoBehaviour
             for (int i = 0; i <= data.CurrentLevel; i++)
             {
                 levelSButtons[i].image.sprite = LevelLogo[i];
+                Image[] coinInButton = levelSButtons[i].GetComponentsInChildren<Image>();
+                for (int j = 0; j<= data.LevelInfos[i];j++)
+                { 
+                    coinInButton[j].color = new Vector4(255, 255, 255, 255);
+   
+                }
+
                 levelSButtons[i+1].image.sprite = LevelLogo[i+1];
 
                 // levelSButtons[i].image.color = Color.black;
