@@ -8,6 +8,8 @@ public class SLLS : MonoBehaviour
     public PlayerData data;
     [SerializeField] Button[] levelSButtons;
     [SerializeField] PlayerTest player;
+    [SerializeField] Sprite[] LevelLogo;
+
     private void Awake()
     {
         data = SaveSystem.LoadPlayer();
@@ -31,11 +33,23 @@ public class SLLS : MonoBehaviour
 
 
         }
-        for (int i = 0; i<=data.CurrentLevel;i++)
+
+        //LevelLock;
+        if (data.LevelInfos[0]>0)
         {
-            levelSButtons[i].image.color = Color.black;
-            levelSButtons[i].enabled = true;
-            levelSButtons[i+1].enabled = true;    
+            for (int i = 0; i <= data.CurrentLevel; i++)
+            {
+                levelSButtons[i].image.sprite = LevelLogo[i];
+                levelSButtons[i+1].image.sprite = LevelLogo[i+1];
+
+                // levelSButtons[i].image.color = Color.black;
+                levelSButtons[i].enabled = true;
+                levelSButtons[i + 1].enabled = true;
+            }
+        }else
+        {
+            levelSButtons[0].image.sprite = LevelLogo[0];
+            levelSButtons[0].enabled = true;
         }
 
 
