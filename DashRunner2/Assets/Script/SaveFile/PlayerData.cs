@@ -16,7 +16,7 @@ public class PlayerData {
 
     public PlayerData(PlayerTest player)
     {
-        LevelInfos = new int[6];
+        LevelInfos = new int[200];
         
             for (int i = 0; i < LevelInfos.Length; i++)
             {
