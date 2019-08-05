@@ -28,7 +28,7 @@ public class LoadNextScene : MonoBehaviour
 
     public void LoadScene()
     {
-        if (SceneManager.GetActiveScene().name=="Level10")
+        if (SceneManager.GetActiveScene().name=="Level10"||SceneManager.GetActiveScene().name=="LevelS")
         {
             SceneManager.LoadScene(0);
         }
@@ -72,6 +72,23 @@ public class LoadNextScene : MonoBehaviour
     public void loadLevel6()
     {
         SceneManager.LoadScene(7);
+    }
+    public void loadLevel7()
+    {
+        SceneManager.LoadScene(8);
+    }
+    public void loadLevel8()
+    {
+        SceneManager.LoadScene(9);
+    }
+    public void loadLevel9()
+    {
+        SceneManager.LoadScene(10);
+    }
+
+    public void loadLevel10()
+    {
+        SceneManager.LoadScene(11);
     }
 
     public void loadCurrent()
