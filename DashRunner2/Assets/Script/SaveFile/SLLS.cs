@@ -39,6 +39,8 @@ public class SLLS : MonoBehaviour
         //LevelLock;
         if (data.LevelInfos[0]>0)
         {
+            //current level start at 0;
+            Debug.Log("CurrentLevel"+data.CurrentLevel);
             for (int i = 0; i <= data.CurrentLevel; i++)
             {
                 levelSButtons[i].image.sprite = LevelLogo[i];
@@ -48,8 +50,9 @@ public class SLLS : MonoBehaviour
                     coinInButton[j].color = new Vector4(255, 255, 255, 255);
    
                 }
-
-                levelSButtons[i+1].image.sprite = LevelLogo[i+1];
+                if(i < LevelLogo.Length-1) {
+                    levelSButtons[i+1].image.sprite = LevelLogo[i+1];
+                }   
 
                 // levelSButtons[i].image.color = Color.black;
                 levelSButtons[i].enabled = true;

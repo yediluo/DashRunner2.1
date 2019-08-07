@@ -48,8 +48,12 @@ public class PlayerTest : MonoBehaviour
     public PlayerData data;
     private void Awake()
     {
+
         Level = SceneManager.GetActiveScene().buildIndex - 2;
-        
+        if(SceneManager.GetActiveScene().name == "LevelS") {
+            Level = SceneManager.GetActiveScene().buildIndex - 3;
+        }
+
         Debug.Log(MaxCoinCount[0].ToString());
         data = SaveSystem.LoadPlayer();
     }

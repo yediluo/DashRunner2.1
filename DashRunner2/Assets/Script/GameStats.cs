@@ -45,7 +45,7 @@ public class GameStats : MonoBehaviour
         player = FindObjectOfType<PlayerTest>();
        sceneName = SceneManager.GetActiveScene().name;
         currentTime = Time.time;
-        timeMax = 30f;
+        timeMax = 9999f;
     }
 
 
