@@ -49,9 +49,9 @@ public class PlayerTest : MonoBehaviour
     private void Awake()
     {
 
-        Level = SceneManager.GetActiveScene().buildIndex - 2;
+        Level = SceneManager.GetActiveScene().buildIndex - 3;
         if(SceneManager.GetActiveScene().name == "LevelS") {
-            Level = SceneManager.GetActiveScene().buildIndex - 3;
+            Level = SceneManager.GetActiveScene().buildIndex - 4;
         }
 
         Debug.Log(MaxCoinCount[0].ToString());
@@ -68,7 +68,7 @@ public class PlayerTest : MonoBehaviour
 
     void Update()
     {
-
+        if(SceneManager.GetActiveScene().buildIndex - 3 >= 0&&SceneManager.GetActiveScene().name != "LevelS") {
         //save playerData
        if(gs.touchDown)
         {
@@ -89,6 +89,7 @@ public class PlayerTest : MonoBehaviour
             }
             SaveSystem.SavePlayer(this);
 
+        }
         }
         if (isAlive)
         {
