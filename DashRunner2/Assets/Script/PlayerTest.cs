@@ -11,7 +11,8 @@ public class PlayerTest : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float AccelerateMultiplier = 1f;
-    [SerializeField] AudioClip PlayerBumpSFX;
+    [SerializeField] AudioClip AccelerationSFX;
+    [SerializeField] AudioClip DeathSFX;
     [SerializeField] GameStats gs;
 
 
@@ -54,7 +55,7 @@ public class PlayerTest : MonoBehaviour
             Level = SceneManager.GetActiveScene().buildIndex - 4;
         }
 
-        Debug.Log(MaxCoinCount[0].ToString());
+       // Debug.Log(MaxCoinCount[0].ToString());
         data = SaveSystem.LoadPlayer();
     }
     void Start()
@@ -115,23 +116,23 @@ public class PlayerTest : MonoBehaviour
     {
         var fingers = Lean.Touch.LeanTouch.Fingers;
 
-        Debug.Log("There are currently " + fingers.Count + " fingers touching the screen.");
+       // Debug.Log("There are currently " + fingers.Count + " fingers touching the screen.");
         if (fingers.Count != 0)
         {
             var x = fingers[0].SwipeScaledDelta.x;
             var y = fingers[0].SwipeScaledDelta.y;
-            Debug.Log(fingers[0].SwipeScaledDelta);
+         //   Debug.Log(fingers[0].SwipeScaledDelta);
 
             if (Mathf.Abs(x) > Mathf.Abs(y))
             {
                 if (x > 0)
                 {
-                    Debug.Log("Right");
+                 //   Debug.Log("Right");
                     directionH = 1;
                 }
                 else if (x < 0)
                 {
-                    Debug.Log("Left");
+                //    Debug.Log("Left");
                     directionH = -1;
                 }
             }
@@ -139,12 +140,12 @@ public class PlayerTest : MonoBehaviour
             {
                 if (y > 0)
                 {
-                    Debug.Log("Up");
+                 //   Debug.Log("Up");
                     directionY = 1;
                 }
                 else if (y < 0)
                 {
-                    Debug.Log("Down");
+                  //  Debug.Log("Down");
                     directionY = -1;
                 }
             }
@@ -160,12 +161,14 @@ public class PlayerTest : MonoBehaviour
             else
             {
                 myAnimator.SetBool("Running", true);
-
                 if ((Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y)) > (originalSpeed + 10))
                 {
                      //myAnimator.SetBool("Running", true);
+                    if(myAnimator.GetBool("Accelerating") == false) {
 
                      myAnimator.SetBool("Accelerating", true);
+                    AudioSource.PlayClipAtPoint(AccelerationSFX, this.transform.position);
+                    }
 
                 }else
                 {
@@ -322,6 +325,8 @@ public class PlayerTest : MonoBehaviour
         if (!gs.touchDown)
         {
             isAlive = false;
+            AudioSource.PlayClipAtPoint(DeathSFX, this.transform.position);
+
             myAnimator.SetTrigger("Dying");
             rb.bodyType = RigidbodyType2D.Static;
             myBodyCollider.enabled = false;

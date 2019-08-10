@@ -22,9 +22,9 @@ public class GameStats : MonoBehaviour
     [SerializeField] GameObject deathPa;
     [SerializeField] GameObject winPa;
     [SerializeField] Text timeLeft;
-    [SerializeField] Image Battery;
+    [SerializeField]public  Image Battery;
     [SerializeField] Sprite[] batterySprites;
-    float timeMax;
+     public float timeMax;
 
 
 
@@ -35,7 +35,7 @@ public class GameStats : MonoBehaviour
     PlayerTest player;
     public int CoinCount;
     public string sceneName;
-    public float currentTime;
+    public float initTime;
     //whether player touched destinatation or not;
     public bool touchDown;
     // Start is called before the first frame update
@@ -44,8 +44,8 @@ public class GameStats : MonoBehaviour
         touchDown = false;
         player = FindObjectOfType<PlayerTest>();
        sceneName = SceneManager.GetActiveScene().name;
-        currentTime = Time.time;
-        timeMax = 9999f;
+        initTime = Time.time;
+        timeMax = 35f;
     }
 
 
@@ -55,7 +55,7 @@ public class GameStats : MonoBehaviour
     {
 
         timeLimit();
-        Debug.Log("coincount= " + CoinCount);
+       // Debug.Log("coincount= " + CoinCount);
         if(CoinCount > 2)
         {
             coinsInGame[0].color = new Vector4(255, 255, 255, 255);
@@ -157,13 +157,13 @@ public class GameStats : MonoBehaviour
 
     public void timeLimit()
     {
-        if ((Time.time - currentTime) < timeMax)
+        if ((Time.time - initTime) < timeMax)
         {
-            float timeRemaining = timeMax - (Time.time - currentTime);
+            float timeRemaining = timeMax - (Time.time - initTime);
             float batteryPercentage = timeRemaining / timeMax;
-            Debug.Log("Time+ = " + (Time.time - currentTime));
+           // Debug.Log("Time+ = " + (Time.time - initTime));
             
-            //timeLeft.text = ("TimeLeft: = " + (Time.time - currentTime));
+            //timeLeft.text = ("TimeLeft: = " + (Time.time - initTime));
             if(batteryPercentage > 11f/12f)
             {
                 Battery.sprite = batterySprites[0];
@@ -232,7 +232,7 @@ public class GameStats : MonoBehaviour
         {
             if (player.isAlive)
             {
-               // timeLeft.text = ("TimeLeft: = " + (Time.time - currentTime));
+               // timeLeft.text = ("TimeLeft: = " + (Time.time - initTime));
 
                 player.deathMove();
             }

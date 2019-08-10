@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ba1da01a206a54189a90d6da90a062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerBumpSFX: {fileID: 8300000, guid: 21de4624124b54b159101551b78a881a, type: 3}
+  PlayerBumpSFX: {fileID: 8300000, guid: f6381f9841edb44cf94643c29a9ac08a, type: 3}
 --- !u!1 &1181656165
 GameObject:
   m_ObjectHideFlags: 0

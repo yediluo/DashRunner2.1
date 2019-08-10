@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5992335665884458400}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.5, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -50,6 +50,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -155,8 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   p: {fileID: 0}
-  destination: {x: 12.5, y: 1.5}
-  PortalSFX: {fileID: 8300000, guid: 4b8a3e138880244468939c6faf5bde60, type: 3}
+  destination: {x: 46.5, y: 54.5}
+  PortalSFX: {fileID: 8300000, guid: fe42bc12bb20c47cc857309d23098527, type: 3}
 --- !u!82 &5992335665884458409
 AudioSource:
   m_ObjectHideFlags: 0
