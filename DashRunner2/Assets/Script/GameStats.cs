@@ -86,8 +86,15 @@ public class GameStats : MonoBehaviour
         Battery.enabled = false;
         PauseResume[0].interactable = false;
         PauseResume[1].interactable = false;
+
+        PauseResume[2].interactable = false;
+        PauseResume[2].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
+
         PauseResume[1].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
         PauseResume[0].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
+
+        PauseResume[0].transform.position = new Vector2(1000,1000);
+
 
         winPa.SetActive(true);
 
@@ -128,8 +135,12 @@ public class GameStats : MonoBehaviour
         Battery.enabled = false;
         PauseResume[0].interactable = false;
         PauseResume[1].interactable = false;
+        PauseResume[2].interactable = false;
+        PauseResume[2].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
         PauseResume[1].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
         PauseResume[0].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
+        PauseResume[0].transform.position = new Vector2(1000,1000);
+
         //display panel
         deathPa.SetActive(true);
 

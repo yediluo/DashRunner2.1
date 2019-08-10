@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ba1da01a206a54189a90d6da90a062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerBumpSFX: {fileID: 8300000, guid: f6381f9841edb44cf94643c29a9ac08a, type: 3}
+  PlayerBumpSFX: {fileID: 8300000, guid: 04adb87018bcd49c68043e2fae35669c, type: 3}
 --- !u!1 &1181656165
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   AccelerateMultiplier: 3
-  AccelerationSFX: {fileID: 0}
+  AccelerationSFX: {fileID: 8300000, guid: 1bc4b2d9d6e2b4d62948c26497b224e8, type: 3}
   DeathSFX: {fileID: 8300000, guid: 4b8a3e138880244468939c6faf5bde60, type: 3}
   gs: {fileID: 0}
   Level: 0

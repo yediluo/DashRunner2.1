@@ -44,6 +44,12 @@ public class LoadNextScene : MonoBehaviour
 
     }
 
+    public void loadWorldSelect()
+    {
+        SceneManager.LoadScene("WorldSelect");
+
+    }
+
     public void loadLevelSelection()
     {
         SceneManager.LoadScene("LevelSelection");
