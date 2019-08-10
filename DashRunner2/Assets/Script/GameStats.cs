@@ -24,6 +24,7 @@ public class GameStats : MonoBehaviour
     [SerializeField] Text timeLeft;
     [SerializeField]public  Image Battery;
     [SerializeField] Sprite[] batterySprites;
+    [SerializeField] Button[] PauseResume;
      public float timeMax;
 
 
@@ -81,9 +82,12 @@ public class GameStats : MonoBehaviour
 
     public void winPanel() {
 
-        //disable battery image;
+        //disable battery image and pause resume;
         Battery.enabled = false;
-
+        PauseResume[0].interactable = false;
+        PauseResume[1].interactable = false;
+        PauseResume[1].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
+        PauseResume[0].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
 
         winPa.SetActive(true);
 
@@ -120,8 +124,12 @@ public class GameStats : MonoBehaviour
     public void deathPanel()
     {
 
-        //disable battery image;
+        //disable battery image and pause resume button;
         Battery.enabled = false;
+        PauseResume[0].interactable = false;
+        PauseResume[1].interactable = false;
+        PauseResume[1].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
+        PauseResume[0].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
         //display panel
         deathPa.SetActive(true);
 

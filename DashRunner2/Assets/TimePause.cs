@@ -18,6 +18,8 @@ public class TimePause : MonoBehaviour
     	rb = player.GetComponent<Rigidbody2D>();
     	PauseResume[0].interactable = true;
     	PauseResume[1].interactable = false;
+        PauseResume[1].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
+
 
     }
 
@@ -30,10 +32,13 @@ public class TimePause : MonoBehaviour
     public void PauseTime() {
     	PauseResume[0].interactable = false;
     	PauseResume[1].interactable = true;
-    	//PauseResume[1].colors = new Vector4(255,255,255,255);
+        //PauseResume[1].colors = new Vector4(255,255,255,255);
+        PauseResume[1].GetComponent<Image>().color = new Vector4(255, 255, 255, 255);
+        PauseResume[0].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
 
 
-    	Time.timeScale = 0f;
+
+        Time.timeScale = 0f;
 
     	//gs.Battery.enabled = false;
     	rb.bodyType = RigidbodyType2D.Static;
@@ -46,7 +51,12 @@ public class TimePause : MonoBehaviour
     	Time.timeScale = 1.0f;
 		PauseResume[0].interactable = true;
     	PauseResume[1].interactable = false;
-    	rb.bodyType = RigidbodyType2D.Dynamic;
+        PauseResume[1].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
+        PauseResume[0].GetComponent<Image>().color = new Vector4(255, 255, 255, 255);
+
+
+        rb.bodyType = RigidbodyType2D.Dynamic;
+
 
     }
 }
