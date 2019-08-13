@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1201077371793304200
 Transform:
@@ -72,6 +72,13 @@ MonoBehaviour:
   - {fileID: -708941435607316227, guid: 05f3a6e1a6d814c21b5bb35b63c0b31a, type: 3}
   - {fileID: -4981577884633574001, guid: 05f3a6e1a6d814c21b5bb35b63c0b31a, type: 3}
   - {fileID: 8700256852154089185, guid: 05f3a6e1a6d814c21b5bb35b63c0b31a, type: 3}
+  PauseResume:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  timeMax: 35
   CoinCount: 0
   sceneName: 
-  currentTime: 0
+  initTime: 0
+  touchDown: 0

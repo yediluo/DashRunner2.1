@@ -88,6 +88,9 @@ public class GameStats : MonoBehaviour
         PauseResume[1].interactable = false;
 
         PauseResume[2].interactable = false;
+        PauseResume[3].interactable = false;
+        PauseResume[3].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);  
+        
         PauseResume[2].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
 
         PauseResume[1].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
@@ -136,6 +139,8 @@ public class GameStats : MonoBehaviour
         PauseResume[0].interactable = false;
         PauseResume[1].interactable = false;
         PauseResume[2].interactable = false;
+        PauseResume[3].interactable = false;
+        PauseResume[3].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);  
         PauseResume[2].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
         PauseResume[1].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
         PauseResume[0].GetComponent<Image>().color = new Vector4(255, 255, 255, 0);
