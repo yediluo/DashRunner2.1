@@ -35,7 +35,7 @@ public class PlayerTest : MonoBehaviour
 
    //assist para
     public float originalSpeed;
-    bool canMove;
+    public bool canMove;
     Vector2 bounceTempSpeed;
     //bool leftBouncer = true;
     bool leftBouncerDL = true;

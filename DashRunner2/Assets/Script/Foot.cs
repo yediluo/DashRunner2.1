@@ -5,11 +5,13 @@ using UnityEngine;
 public class Foot : MonoBehaviour
 {
     [SerializeField] AudioClip PlayerBumpSFX;
+    SimpleCameraShakeInCinemachine cs;
     BoxCollider2D myCollider;
     // Start is called before the first frame update
     void Start()
     {
         myCollider = GetComponent<BoxCollider2D>();
+        cs = FindObjectOfType<SimpleCameraShakeInCinemachine>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class Foot : MonoBehaviour
          
         {
             AudioSource.PlayClipAtPoint(PlayerBumpSFX, transform.position);
+            cs.doshake = true;
         }
     }
 }

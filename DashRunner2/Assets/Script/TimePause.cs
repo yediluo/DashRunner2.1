@@ -46,7 +46,7 @@ public class TimePause : MonoBehaviour
 
         Time.timeScale = 0f;
 
-    	rb.bodyType = RigidbodyType2D.Static;
+    	//rb.bodyType = RigidbodyType2D.Static;
 
     	
     }
@@ -64,7 +64,7 @@ public class TimePause : MonoBehaviour
         gs.Battery.enabled = true;
 
 
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        //rb.bodyType = RigidbodyType2D.Dynamic;
 
 
     }
