@@ -228,6 +228,35 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 69
       objectReference: {fileID: 0}
+    - target: {fileID: 1070216913, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070216913, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1047083590366316948}
+    - target: {fileID: 1070216913, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070216913, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070216913, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070216913, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 323449625, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 580f9e373c6d347a6bc226cdb3cbc723,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
 --- !u!224 &8146714591318658311 stripped
@@ -404,6 +433,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1047083590366316948 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1931366208, guid: 95a26c7576b7cc14ba18496fc21e57ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1047083590115034836}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5dd428660874bae891237ae7c5883a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1047083590837443181 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1425218745, guid: 95a26c7576b7cc14ba18496fc21e57ec,
@@ -502,11 +543,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
         type: 3}
-      propertyPath: batterySprites.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
       propertyPath: coinsInWinPanel.Array.data[0]
       value: 
       objectReference: {fileID: 1047083590026859124}
@@ -590,78 +626,6 @@ PrefabInstance:
       propertyPath: PauseResume.Array.data[3]
       value: 
       objectReference: {fileID: 1047083589079445509}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
-      propertyPath: batterySprites.Array.data[0]
-      value: 
-      objectReference: {fileID: -6128161011802207946, guid: a46e8b221cb754ac982d43ffbde96844,
-        type: 3}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
-      propertyPath: batterySprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 1019566430862529664, guid: a46e8b221cb754ac982d43ffbde96844,
-        type: 3}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
-      propertyPath: batterySprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 2691640799600690044, guid: a46e8b221cb754ac982d43ffbde96844,
-        type: 3}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
-      propertyPath: batterySprites.Array.data[3]
-      value: 
-      objectReference: {fileID: -1490492294083635188, guid: a46e8b221cb754ac982d43ffbde96844,
-        type: 3}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
-      propertyPath: batterySprites.Array.data[4]
-      value: 
-      objectReference: {fileID: 3278015864414559569, guid: fbab39cf9fc034598aa26b3b1aca8c33,
-        type: 3}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
-      propertyPath: batterySprites.Array.data[5]
-      value: 
-      objectReference: {fileID: 6036133712928814452, guid: fbab39cf9fc034598aa26b3b1aca8c33,
-        type: 3}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
-      propertyPath: batterySprites.Array.data[6]
-      value: 
-      objectReference: {fileID: 6186096796261157211, guid: fbab39cf9fc034598aa26b3b1aca8c33,
-        type: 3}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
-      propertyPath: batterySprites.Array.data[7]
-      value: 
-      objectReference: {fileID: -1204986674463795279, guid: fbab39cf9fc034598aa26b3b1aca8c33,
-        type: 3}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
-      propertyPath: batterySprites.Array.data[8]
-      value: 
-      objectReference: {fileID: 8751964478392187600, guid: 05f3a6e1a6d814c21b5bb35b63c0b31a,
-        type: 3}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
-      propertyPath: batterySprites.Array.data[9]
-      value: 
-      objectReference: {fileID: -708941435607316227, guid: 05f3a6e1a6d814c21b5bb35b63c0b31a,
-        type: 3}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
-      propertyPath: batterySprites.Array.data[10]
-      value: 
-      objectReference: {fileID: -4981577884633574001, guid: 05f3a6e1a6d814c21b5bb35b63c0b31a,
-        type: 3}
-    - target: {fileID: 1201077371793304203, guid: 6f5099cfc6569064faca7882b400d029,
-        type: 3}
-      propertyPath: batterySprites.Array.data[11]
-      value: 
-      objectReference: {fileID: 8700256852154089185, guid: 05f3a6e1a6d814c21b5bb35b63c0b31a,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f5099cfc6569064faca7882b400d029, type: 3}
 --- !u!4 &4601160975449396221 stripped

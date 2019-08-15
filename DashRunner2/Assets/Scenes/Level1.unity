@@ -127,11 +127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1941176513}
     m_Modifications:
-    - target: {fileID: 4628201287684546050, guid: dc86490e11bb5e447810f7008ebd7642,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerTest
-      objectReference: {fileID: 0}
     - target: {fileID: 4628201287684546297, guid: dc86490e11bb5e447810f7008ebd7642,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,6 +181,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628201287684546050, guid: dc86490e11bb5e447810f7008ebd7642,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerTest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc86490e11bb5e447810f7008ebd7642, type: 3}
@@ -1908,10 +1908,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1425218745, guid: cf77e6d9cf709634cb252ea6b40fe0c4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2001360853}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf77e6d9cf709634cb252ea6b40fe0c4, type: 3}
 --- !u!4 &1662480845 stripped
@@ -40384,18 +40380,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &2001360853 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7590463266721394944, guid: 7d53929d29f9b074ab526d6c41d38a88,
-    type: 3}
-  m_PrefabInstance: {fileID: 7590463267863972570}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7986c08fbcabba949a18ffaf7da9b182, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7590463267863972570
 PrefabInstance:
   m_ObjectHideFlags: 0

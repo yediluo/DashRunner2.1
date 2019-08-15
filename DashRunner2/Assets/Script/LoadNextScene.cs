@@ -97,6 +97,11 @@ public class LoadNextScene : MonoBehaviour
         SceneManager.LoadScene(12);
     }
 
+    public void loadLevel11()
+    {
+        SceneManager.LoadScene(13);
+    }
+
     public void loadCurrent()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
