@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class PlayerTest : MonoBehaviour
 {
+    
     [SerializeField] float speed;
     [SerializeField] float AccelerateMultiplier = 1f;
     [SerializeField] AudioClip AccelerationSFX;
@@ -33,7 +34,9 @@ public class PlayerTest : MonoBehaviour
     String playerPState = "Idle";
 
 
-   //assist para
+    //assist para
+
+    public Button Dbug;
     public float originalSpeed;
     public bool canMove;
     Vector2 bounceTempSpeed;
@@ -73,6 +76,7 @@ public class PlayerTest : MonoBehaviour
         //save playerData
        if(gs.touchDown)
         {
+            
             for(int i = 0; i<data.LevelInfos.Length; i++)
             {
                     MaxCoinCount[i] = data.LevelInfos[i];
@@ -81,6 +85,8 @@ public class PlayerTest : MonoBehaviour
             if (MaxCoinCount[Level] < gs.CoinCount) {
                 MaxCoinCount[Level] = gs.CoinCount;
             }
+
+            
             if(data.CurrentLevel < Level)
             {
                 maxLevel = Level;
@@ -88,7 +94,9 @@ public class PlayerTest : MonoBehaviour
             {
                 maxLevel = data.CurrentLevel;
             }
-            SaveSystem.SavePlayer(this);
+
+                Dbug.GetComponentInChildren<Text>().text = "MaxLevel: = " + maxLevel;
+                SaveSystem.SavePlayer(this);
 
         }
         }

@@ -32,7 +32,7 @@ public class GameStats : MonoBehaviour
 
 
     //support
-
+    public Button Dbug;
     PlayerTest player;
     public int CoinCount;
     public string sceneName;
@@ -56,6 +56,7 @@ public class GameStats : MonoBehaviour
     {
 
         timeLimit();
+        Dbug.GetComponentInChildren<Text>().text = "coinCount: " + CoinCount;
        // Debug.Log("coincount= " + CoinCount);
         if(CoinCount > 2)
         {
