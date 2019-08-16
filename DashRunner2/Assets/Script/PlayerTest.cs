@@ -94,9 +94,7 @@ public class PlayerTest : MonoBehaviour
             {
                 maxLevel = data.CurrentLevel;
             }
-
-                Dbug.GetComponentInChildren<Text>().text = "MaxLevel: = " + maxLevel;
-                SaveSystem.SavePlayer(this);
+            SaveSystem.SavePlayer(this);
 
         }
         }

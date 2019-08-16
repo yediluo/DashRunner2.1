@@ -25,7 +25,10 @@ public class Foot : MonoBehaviour
          
         {
             AudioSource.PlayClipAtPoint(PlayerBumpSFX, transform.position);
-            cs.doshake = true;
+            if (cs != null)
+            {
+                cs.doshake = true;
+            }
         }
     }
 }
