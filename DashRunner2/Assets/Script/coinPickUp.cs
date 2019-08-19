@@ -13,10 +13,14 @@ public class coinPickUp : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        AudioSource.PlayClipAtPoint(PlayerBumpSFX, transform.position);
-        GS.CoinCount++;
+        if (collision.tag == "Player")
+        {
+            AudioSource.PlayClipAtPoint(PlayerBumpSFX, transform.position);
 
-        Destroy(gameObject);
+            GS.CoinCount++;
+
+            Destroy(gameObject);
+        }
     }
 
 

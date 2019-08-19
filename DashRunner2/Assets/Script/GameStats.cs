@@ -46,7 +46,7 @@ public class GameStats : MonoBehaviour
         player = FindObjectOfType<PlayerTest>();
        sceneName = SceneManager.GetActiveScene().name;
         initTime = Time.time;
-        timeMax = 35f;
+        //timeMax = 35f;
     }
 
 
@@ -56,7 +56,10 @@ public class GameStats : MonoBehaviour
     {
 
         timeLimit();
-        Dbug.GetComponentInChildren<Text>().text = "coinCount: " + CoinCount;
+        if (Dbug != null)
+        {
+            Dbug.GetComponentInChildren<Text>().text = "coinCount: " + CoinCount;
+        }
        // Debug.Log("coincount= " + CoinCount);
         if(CoinCount > 2)
         {
