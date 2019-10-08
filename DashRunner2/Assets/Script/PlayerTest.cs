@@ -415,6 +415,36 @@ public class PlayerTest : MonoBehaviour
             leftBouncerUL = false;
         }
 
+        if(collision.tag == "E4slow")
+        {
+            speed = 10;
+            if (Mathf.Abs(rb.velocity.x) > Mathf.Abs(rb.velocity.y))
+            {
+                rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x)*10,0);
+            }else if(Mathf.Abs(rb.velocity.x) < Mathf.Abs(rb.velocity.y))
+            {
+                rb.velocity = new Vector2(0,Mathf.Sign(rb.velocity.y) * 10);
+
+            }
+
+
+        }
+        if (collision.tag == "E4restore")
+        {
+            speed = originalSpeed;
+            if (Mathf.Abs(rb.velocity.x) > Mathf.Abs(rb.velocity.y))
+            {
+                rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * originalSpeed, 0);
+            }
+            else if (Mathf.Abs(rb.velocity.x) < Mathf.Abs(rb.velocity.y))
+            {
+                rb.velocity = new Vector2(0, Mathf.Sign(rb.velocity.y) * originalSpeed);
+
+            }
+
+
+        }
+
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
