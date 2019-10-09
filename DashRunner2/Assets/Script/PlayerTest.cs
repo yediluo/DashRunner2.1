@@ -376,6 +376,8 @@ public class PlayerTest : MonoBehaviour
             deathMove();
         }
 
+
+
     }
 
 
@@ -445,6 +447,12 @@ public class PlayerTest : MonoBehaviour
 
         }
 
+        if(collision.tag == "T3freezePoint")
+        {
+            rb.velocity = new Vector2(0, 0);
+            this.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y + 1);
+        }
+
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -455,6 +463,7 @@ public class PlayerTest : MonoBehaviour
             
             rb.velocity = new Vector2(Mathf.RoundToInt(bounceTempSpeed.x), Mathf.RoundToInt(bounceTempSpeed.y));
         }
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

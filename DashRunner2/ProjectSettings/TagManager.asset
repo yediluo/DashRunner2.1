@@ -17,6 +17,8 @@ TagManager:
   - Coin
   - E4slow
   - E4restore
+  - T1trap
+  - T3freezePoint
   layers:
   - Default
   - TransparentFX
