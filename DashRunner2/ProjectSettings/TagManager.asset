@@ -19,6 +19,10 @@ TagManager:
   - E4restore
   - T1trap
   - T3freezePoint
+  - T3freezePointR
+  - T3freezePointL
+  - T3FreezePointUp
+  - T5Invincible
   layers:
   - Default
   - TransparentFX

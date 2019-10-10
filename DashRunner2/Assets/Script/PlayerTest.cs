@@ -50,6 +50,14 @@ public class PlayerTest : MonoBehaviour
   //  bool isAccelerating = false;
     public bool canPlayBump = false;
     public PlayerData data;
+    //for freezePoint
+    bool freezeP = false;
+    float freezeBeginTime;
+
+    //for invincible pill;
+    bool invincible = false;
+    float invincibleBeginTime = 0;
+
     private void Awake()
     {
 
@@ -105,13 +113,42 @@ public class PlayerTest : MonoBehaviour
         }
         if (isAlive)
         {
+            //freezePoint bodytypechange
+            if(freezeP)
+            {
+                Debug.Log("freezeTIme: " + (freezeBeginTime));
+                directionH = 0;
+                directionY = 0;
+                if(excuteAfterTime(freezeBeginTime,0.5f)) {
+                    movingFourWay();
+
+                    freezeBeginTime = 0;
+                    freezeP = false;
+                }
+                
+            }else
+            {
+                movingFourWay();
+
+            }
             PlayerAnimation();
             PlayerFlip();
             colliderInBounce();
 
-            movingFourWay();
             // movingBasic();
-            playerDeath();
+            if (invincible)
+            {
+                if(excuteAfterTime(invincibleBeginTime,5))
+                {
+                    playerDeath();
+                    invincibleBeginTime = 0;
+                    invincible = false;
+                }
+            }
+            else
+            {
+                playerDeath();
+            }
         }
         else
         {
@@ -324,7 +361,7 @@ public class PlayerTest : MonoBehaviour
 
     public void playerDeath()
     {
-        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Harzard")))
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Harzard","Bullet")))
         {
             deathMove();
         }
@@ -371,10 +408,10 @@ public class PlayerTest : MonoBehaviour
            // myAnimator.SetBool("Accelerating", true);
 
         }
-        if (collision.gameObject.tag == "Bullet")
+       /* if (collision.gameObject.tag == "Bullet")
         {
             deathMove();
-        }
+        }*/
 
 
 
@@ -450,7 +487,46 @@ public class PlayerTest : MonoBehaviour
         if(collision.tag == "T3freezePoint")
         {
             rb.velocity = new Vector2(0, 0);
+            freezeBeginTime = Time.time;
+
+            freezeP = true;
             this.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y + 1);
+        }
+        if (collision.tag == "T3freezePointR")
+        {
+
+            rb.velocity = new Vector2(0, 0);
+            //disable player controll;
+           // rb.bodyType = RigidbodyType2D.Static;
+            //start a timer for 0,5 s
+            freezeBeginTime = Time.time;
+
+            freezeP = true;
+
+            this.transform.position = new Vector2(collision.transform.position.x-1, collision.transform.position.y);
+
+        }
+        if (collision.tag == "T3freezePointL")
+        {
+            rb.velocity = new Vector2(0, 0);
+            freezeBeginTime = Time.time;
+
+            freezeP = true;
+            this.transform.position = new Vector2(collision.transform.position.x+1, collision.transform.position.y);
+        }
+        if (collision.tag == "T3freezePointUp")
+        {
+            rb.velocity = new Vector2(0, 0);
+            freezeBeginTime = Time.time;
+
+            freezeP = true;
+            this.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y - 1);
+        }
+
+        if(collision.tag == "T5Invincible")
+        {
+            invincibleBeginTime = Time.time;
+            invincible = true;
         }
 
     }
@@ -459,11 +535,11 @@ public class PlayerTest : MonoBehaviour
 
         if (canMove)
         {
-          //  Debug.Log("BounceTempSpeed: = " + bounceTempSpeed);
-            
+            //  Debug.Log("BounceTempSpeed: = " + bounceTempSpeed);
+
             rb.velocity = new Vector2(Mathf.RoundToInt(bounceTempSpeed.x), Mathf.RoundToInt(bounceTempSpeed.y));
         }
-
+        
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -511,6 +587,19 @@ public class PlayerTest : MonoBehaviour
 
             myBodyCollider.size = new Vector2(0.48f, 1f);
         }
+    }
+
+
+    public bool excuteAfterTime(float beginTime, float waitTime)
+    {
+       if((Time.time - beginTime)>=waitTime) 
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
+       
     }
 }
 
