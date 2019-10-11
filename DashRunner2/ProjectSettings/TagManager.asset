@@ -21,8 +21,8 @@ TagManager:
   - T3freezePoint
   - T3freezePointR
   - T3freezePointL
-  - T3FreezePointUp
   - T5Invincible
+  - T3freezePointUp
   layers:
   - Default
   - TransparentFX
