@@ -12,7 +12,7 @@ public class E1loop : MonoBehaviour
     {
         myrb = GetComponent<Rigidbody2D>();
         mybcd = GetComponent<BoxCollider2D>();
-        myrb.velocity = new Vector2(0f, speed);
+        myrb.velocity = new Vector2(speed, 0);
 
     }
 
@@ -29,25 +29,34 @@ public class E1loop : MonoBehaviour
             if (myrb.velocity.y > 0)
             {
                 myrb.velocity = new Vector2(speed, 0f);
-                mybcd.size = new Vector2(1f, 0.5f);
+                this.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+              //  mybcd.size = new Vector2(1f, 0.5f);
 
             }
             else if (myrb.velocity.y < 0)
             {
                 myrb.velocity = new Vector2(-speed, 0f);
-                mybcd.size = new Vector2(1f, 0.5f);
+                this.transform.rotation = Quaternion.Euler(0, 0, 180);
+
+                // mybcd.size = new Vector2(1f, 0.5f);
             }
-        }else
+        }
+        else
         {
             if(myrb.velocity.x > 0)
             {
                 myrb.velocity = new Vector2(0f,-speed);
-                mybcd.size = new Vector2(0.5f, 1f);
+                this.transform.rotation = Quaternion.Euler(0, 0, -90);
+
+                // mybcd.size = new Vector2(0.5f, 1f);
             }
             else if (myrb.velocity.x < 0)
             {
                 myrb.velocity = new Vector2(0f,speed);
-                mybcd.size = new Vector2(0.2f, 1f);
+                this.transform.rotation = Quaternion.Euler(0, 0, 90);
+
+                // mybcd.size = new Vector2(0.5f, 1f);
             }
         }
 

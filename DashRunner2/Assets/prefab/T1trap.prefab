@@ -75,8 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -2127112529
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2209026673263383247, guid: 181a8cfda4faad542ab48b98870f8e22,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8fddf5e23815643108c3e895fcb0bcb5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -190,11 +189,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1302922799770401868}
     m_Modifications:
-    - target: {fileID: 5182049484790981254, guid: 9d7b1f742d3dc4df1b8eedf53a4dad7f,
-        type: 3}
-      propertyPath: m_Name
-      value: TpSpike
-      objectReference: {fileID: 0}
     - target: {fileID: 5182049484790981255, guid: 9d7b1f742d3dc4df1b8eedf53a4dad7f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -249,6 +243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182049484790981254, guid: 9d7b1f742d3dc4df1b8eedf53a4dad7f,
+        type: 3}
+      propertyPath: m_Name
+      value: TpSpike
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d7b1f742d3dc4df1b8eedf53a4dad7f, type: 3}

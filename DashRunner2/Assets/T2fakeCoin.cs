@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class T2fakeCoin : MonoBehaviour
 {
+    Animator myAC;
+    private void Start()
+    {
+        myAC = GetComponent<Animator>();
+    }
     /*  private void OnTriggerEnter2D(Collider2D collision)
       {
           if (collision.tag == "Player")
@@ -20,6 +25,8 @@ public class T2fakeCoin : MonoBehaviour
         if(collision.gameObject.tag== "Player")
         {
             //trigger coin death animation;
+            myAC.SetTrigger("active");
+            
         }
     }
 
