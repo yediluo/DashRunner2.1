@@ -136,11 +136,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2009946257299654308}
-  - component: {fileID: 2009946257299654307}
   - component: {fileID: 2009946257299654310}
   - component: {fileID: 2009946257299654309}
   - component: {fileID: 2009946257299654328}
-  - component: {fileID: 2009946257299654311}
   - component: {fileID: 840232300324048704}
   m_Layer: 11
   m_Name: T5InvinciblePill
@@ -164,25 +162,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2009946257299654307
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2009946257299654306}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 23cb74a66dc4bae4eb521f54a096bf9d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &2009946257299654310
 Rigidbody2D:
   serializedVersion: 4
@@ -243,7 +222,7 @@ SpriteRenderer:
   m_SortingLayerID: 222531945
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 454120933677506521, guid: 53fb551045b61a14ca98c3b3932bb248, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15ad6de6411964bed874b9794c451b6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -270,21 +249,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.440625
---- !u!114 &2009946257299654311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2009946257299654306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc01a33c58b91f648a859c0eb1ac4683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myrb: {fileID: 0}
-  PlayerBumpSFX: {fileID: 8300000, guid: 0370f84332cc9db46968a1d8097a9f07, type: 3}
-  GS: {fileID: 0}
 --- !u!114 &840232300324048704
 MonoBehaviour:
   m_ObjectHideFlags: 0

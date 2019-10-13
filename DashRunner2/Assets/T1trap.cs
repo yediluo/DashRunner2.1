@@ -25,11 +25,18 @@ public class T1trap : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (!startCount)
         {
-            beginTime = Time.time;
+            if (collision.gameObject.tag == "Player")
+            {
+                beginTime = Time.time;
 
-            startCount = true;
+                startCount = true;
+            }
         }
     }
+
+    
+
+
 }
