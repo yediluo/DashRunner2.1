@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 3654775730148415451}
   - component: {fileID: 3654775730148415452}
   - component: {fileID: 3654775730148415448}
+  - component: {fileID: 1844125109}
   m_Layer: 11
   m_Name: T3FreezePoint
-  m_TagString: T3freezePoint
+  m_TagString: T3freezePointUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,3 +171,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6684189, y: 1.5784502}
   m_EdgeRadius: 0
+--- !u!114 &1844125109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3654775730148415454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c47a3d5a80a84f8ea5838c577195b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

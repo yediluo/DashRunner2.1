@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1302922799770401869, guid: 9c28885495205468391d11d5ad8db041,
         type: 3}
       propertyPath: m_Name
-      value: T1trapR
+      value: T1trapR Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1302922799770401868, guid: 9c28885495205468391d11d5ad8db041,
         type: 3}

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1302922799770401872}
   - component: {fileID: 1302922799770401873}
   - component: {fileID: 1302922799770401870}
-  - component: {fileID: 277965811}
   m_Layer: 11
   m_Name: T1trap
   m_TagString: T1trap
@@ -146,42 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spike: {fileID: 1302922799520121967}
---- !u!66 &277965811
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302922799770401869}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1302922799770401873}
-    m_ColliderPaths:
-    - - X: 4999971
-        Y: -5000000
-      - X: 4999971
-        Y: 5000000
-      - X: -5000000
-        Y: 4999971
-      - X: -4999971
-        Y: -5000000
-  m_CompositePaths:
-    m_Paths:
-    - - {x: 0.49999422, y: -0.5}
-      - {x: 0.49999422, y: 0.5}
-      - {x: -0.5, y: 0.49999422}
-      - {x: -0.49999422, y: -0.5}
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.000005
 --- !u!1001 &6196601170364065513
 PrefabInstance:
   m_ObjectHideFlags: 0

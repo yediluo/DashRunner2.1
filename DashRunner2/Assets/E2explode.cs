@@ -6,10 +6,11 @@ public class E2explode : MonoBehaviour
 {
 
     BoxCollider2D mybcd;
-
+    [SerializeField] GameObject explosionPrefab ;
 
     //assist var
     float beginTime;
+    bool isExploded = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +22,32 @@ public class E2explode : MonoBehaviour
     void Update()
     {
         float currentTime = Time.realtimeSinceStartup;
-        if ((currentTime - beginTime) >= 3)
+        if ((currentTime - beginTime) >= 4)
         {
-            mybcd.size = new Vector2(1f, 1f);
+           // mybcd.size = new Vector2(1f, 1f);
             beginTime = currentTime;
-        }else if ((currentTime - beginTime) >=2) {
-            mybcd.size = new Vector2(2.5f, 2.5f);
+            isExploded = false;
+
+        }
+        else if ((currentTime - beginTime) >=2) {
+          //  mybcd.size = new Vector2(2.5f, 2.5f);
+            if(!isExploded) {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Instantiate(explosionPrefab, new Vector2(transform.position.x+1,transform.position.y), Quaternion.identity);
+                Instantiate(explosionPrefab, new Vector2(transform.position.x - 1, transform.position.y), Quaternion.identity);
+                Instantiate(explosionPrefab, new Vector2(transform.position.x, transform.position.y+1), Quaternion.identity);
+                Instantiate(explosionPrefab, new Vector2(transform.position.x, transform.position.y-1), Quaternion.identity);
+                Instantiate(explosionPrefab, new Vector2(transform.position.x+1, transform.position.y + 1), Quaternion.identity);
+                Instantiate(explosionPrefab, new Vector2(transform.position.x + 1, transform.position.y - 1), Quaternion.identity);
+                Instantiate(explosionPrefab, new Vector2(transform.position.x - 1, transform.position.y - 1), Quaternion.identity);
+                Instantiate(explosionPrefab, new Vector2(transform.position.x - 1, transform.position.y + 1), Quaternion.identity);
+
+
+                isExploded = true;
+
+
+           }
+
         }
 
     }

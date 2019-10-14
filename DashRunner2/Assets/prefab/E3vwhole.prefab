@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4498469086418344765}
   - component: {fileID: 4498469086418344762}
   - component: {fileID: 8059324970158916199}
-  - component: {fileID: 8244663282228538726}
+  - component: {fileID: 1783941224}
   m_Layer: 12
   m_Name: E3vwhole
   m_TagString: Enemy
@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4498469086418344742}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 119.49, y: 15.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -169,7 +169,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8244663282228538726
+--- !u!114 &1783941224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +178,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4498469086418344742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b746ef1bbe8ad4a1f9f5371fc3cd98ff, type: 3}
+  m_Script: {fileID: 11500000, guid: a9fc84598a0b447d9bbbe9ed10c1ab05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   size: 3
+  explosionPrefab: {fileID: 5304537728072979744, guid: 1ba70ae1583a640df94a154a399d31c0,
+    type: 3}
