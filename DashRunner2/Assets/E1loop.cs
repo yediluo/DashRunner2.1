@@ -7,6 +7,12 @@ public class E1loop : MonoBehaviour
     [SerializeField] float speed;
     Rigidbody2D myrb;
     BoxCollider2D mybcd;
+
+
+    //assist var
+    //avoid debounce
+    float debounceBeginTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,45 +25,81 @@ public class E1loop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!FindObjectOfType<PlayerTest>().isAlive)
+        {
+            Destroy(gameObject);
+        }
+        /*      if(mybcd.IsTouchingLayers(LayerMask.GetMask("Player")))
+              {
+                  Destroy(gameObject);
+              }*/
+        //Debug.Log("rotation + = " + transform.rotation.eulerAngles);
 
+       // Debug.Log("quarternion + = " + Quaternion.Euler(0,0,180));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Mathf.Approximately(myrb.velocity.x, 0))
+
+        if (collision.tag != "Player"&& excuteAfterTime(debounceBeginTime, 1))
         {
-            if (myrb.velocity.y > 0)
-            {
-                myrb.velocity = new Vector2(speed, 0f);
-                this.transform.rotation = Quaternion.Euler(0, 0, 0);
 
-              //  mybcd.size = new Vector2(1f, 0.5f);
+
+            if(QuaternionsEqual(transform.rotation,Quaternion.Euler(0,0,0), 0.0000004f))
+            {
+                transform.rotation = Quaternion.Euler(0, 0, -90);
+                myrb.velocity = new Vector2(0f, -speed);
+
 
             }
-            else if (myrb.velocity.y < 0)
+            else if (QuaternionsEqual(transform.rotation, Quaternion.Euler(0, 0, -90),0.0000004f))
             {
-                myrb.velocity = new Vector2(-speed, 0f);
+                Debug.Log("match quaternion2");
+                Debug.Log(transform.rotation);
                 this.transform.rotation = Quaternion.Euler(0, 0, 180);
+                myrb.velocity = new Vector2(-speed, 0f);
 
-                // mybcd.size = new Vector2(1f, 0.5f);
+
+
             }
+            else if (QuaternionsEqual(transform.rotation, Quaternion.Euler(0, 0, 180), 0.0000004f))
+            {
+                Debug.Log("match quaternion3");
+                transform.rotation = Quaternion.Euler(0, 0, 90);
+                myrb.velocity = new Vector2(0f, speed);
+
+
+
+            }
+            else if (QuaternionsEqual(transform.rotation, Quaternion.Euler(0, 0, 90), 0.0000004f))
+            {
+                Debug.Log("match quaternion4");
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+                myrb.velocity = new Vector2(speed,0f);
+
+            }
+            debounceBeginTime = Time.time;
+
+
+        }
+    }
+
+
+    public static bool QuaternionsEqual(Quaternion q1, Quaternion q2, float precision)
+    {
+        return Mathf.Abs(Quaternion.Dot(q1, q2)) >= 1 - precision;
+    }
+
+
+    public bool excuteAfterTime(float beginTime, float waitTime)
+    {
+        if ((Time.time - beginTime) >= waitTime)
+        {
+            return true;
         }
         else
         {
-            if(myrb.velocity.x > 0)
-            {
-                myrb.velocity = new Vector2(0f,-speed);
-                this.transform.rotation = Quaternion.Euler(0, 0, -90);
-
-                // mybcd.size = new Vector2(0.5f, 1f);
-            }
-            else if (myrb.velocity.x < 0)
-            {
-                myrb.velocity = new Vector2(0f,speed);
-                this.transform.rotation = Quaternion.Euler(0, 0, 90);
-
-                // mybcd.size = new Vector2(0.5f, 1f);
-            }
+            return false;
         }
 
     }

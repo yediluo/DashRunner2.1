@@ -59,6 +59,7 @@ public class PlayerTest : MonoBehaviour
     //for invincible pill;
     bool invincible = false;
     float invincibleBeginTime = 0;
+    public int T5invincibleTIme;
 
     private void Awake()
     {
@@ -140,7 +141,7 @@ public class PlayerTest : MonoBehaviour
             // movingBasic();
             if (invincible)
             {
-                if(excuteAfterTime(invincibleBeginTime,5))
+                if(excuteAfterTime(invincibleBeginTime, T5invincibleTIme))
                 {
 
                     playerDeath();
@@ -382,6 +383,8 @@ public class PlayerTest : MonoBehaviour
             myAnimator.SetTrigger("Dying");
             rb.bodyType = RigidbodyType2D.Static;
             myBodyCollider.enabled = false;
+            FindObjectOfType<Foot>().GetComponent<BoxCollider2D>().enabled = false;
+            
         }
 
     }
@@ -417,6 +420,7 @@ public class PlayerTest : MonoBehaviour
             if (!invincible)
             {
                 deathMove();
+
             }
         }
 

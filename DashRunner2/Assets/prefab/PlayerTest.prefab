@@ -526,6 +526,7 @@ MonoBehaviour:
   data:
     LevelInfos: 
     CurrentLevel: 0
+  T5invincibleTIme: 5
 --- !u!212 &4628201287684546303
 SpriteRenderer:
   m_ObjectHideFlags: 0
