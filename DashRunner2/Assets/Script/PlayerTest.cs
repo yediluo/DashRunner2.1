@@ -503,7 +503,7 @@ public class PlayerTest : MonoBehaviour
             freezeBeginTime = Time.time;
 
             freezeP = true;
-            this.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y + 1);
+            this.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y + 0.96f);
         }
         if (collision.tag == "T3freezePointR")
         {
@@ -516,7 +516,7 @@ public class PlayerTest : MonoBehaviour
 
             freezeP = true;
 
-            this.transform.position = new Vector2(collision.transform.position.x-1, collision.transform.position.y);
+            this.transform.position = new Vector2(collision.transform.position.x-0.96f, collision.transform.position.y);
 
         }
         if (collision.tag == "T3freezePointL")
@@ -525,7 +525,7 @@ public class PlayerTest : MonoBehaviour
             freezeBeginTime = Time.time;
 
             freezeP = true;
-            this.transform.position = new Vector2(collision.transform.position.x+1, collision.transform.position.y);
+            this.transform.position = new Vector2(collision.transform.position.x+ 0.96f, collision.transform.position.y);
         }
         if (collision.tag == "T3freezePointUp")
         {
@@ -533,7 +533,7 @@ public class PlayerTest : MonoBehaviour
             freezeBeginTime = Time.time;
 
             freezeP = true;
-            this.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y - 1);
+            this.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y - 0.96f);
         }
 
         if(collision.tag == "T5Invincible")
