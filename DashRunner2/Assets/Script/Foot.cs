@@ -5,6 +5,7 @@ using UnityEngine;
 public class Foot : MonoBehaviour
 {
     [SerializeField] AudioClip PlayerBumpSFX;
+    AudioSource audioSource;
     SimpleCameraShakeInCinemachine cs;
     BoxCollider2D myCollider;
     // Start is called before the first frame update
@@ -12,6 +13,7 @@ public class Foot : MonoBehaviour
     {
         myCollider = GetComponent<BoxCollider2D>();
         cs = FindObjectOfType<SimpleCameraShakeInCinemachine>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,10 +23,16 @@ public class Foot : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Ground" || collision.tag == "AccelerateGround")
+
+        audioSource.PlayOneShot(PlayerBumpSFX, 1.0f);
+
+
+        if (collision.tag == "Ground" || collision.tag == "AccelerateGround"||collision.tag == "T1trap" || collision.tag == "BounceUL" || collision.tag == "BounceUR" || collision.tag == "BounceDL" || collision.tag == "BounceDR")
          
         {
-            AudioSource.PlayClipAtPoint(PlayerBumpSFX, transform.position);
+//            audioSource.PlayOneShot(PlayerBumpSFX, 1.0f);
+            
+
             if (cs != null)
             {
                 cs.doshake = true;
