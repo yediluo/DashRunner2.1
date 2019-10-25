@@ -9,13 +9,13 @@ using UnityEngine.UI;
 
 public class PlayerTest : MonoBehaviour
 {
-    
+
     [SerializeField] float speed;
     [SerializeField] float AccelerateMultiplier;
     [SerializeField] AudioClip AccelerationSFX;
     [SerializeField] AudioClip DeathSFX;
     [SerializeField] GameObject invC;
-    [SerializeField] GameObject handcuff; 
+    [SerializeField] GameObject handcuff;
     GameStats gs;
 
 
@@ -25,7 +25,7 @@ public class PlayerTest : MonoBehaviour
     public Rigidbody2D rb;
     public BoxCollider2D myBodyCollider;
     public Animator myAnimator;
-     
+
 
     //state
     private float t = 0.0f;
@@ -47,9 +47,9 @@ public class PlayerTest : MonoBehaviour
     bool leftBouncerDR = true;
     bool leftBouncerUL = true;
     bool leftBouncerUR = true;
-   // int collisionCount = 0;
+    // int collisionCount = 0;
     bool isCornerEulerSet = false;
-  //  bool isAccelerating = false;
+    //  bool isAccelerating = false;
     public bool canPlayBump = false;
     public PlayerData data;
     //for freezePoint
@@ -65,11 +65,11 @@ public class PlayerTest : MonoBehaviour
     {
 
         Level = SceneManager.GetActiveScene().buildIndex - 3;
-        if(SceneManager.GetActiveScene().name == "LevelS") {
+        if (SceneManager.GetActiveScene().name == "LevelS") {
             Level = SceneManager.GetActiveScene().buildIndex - 4;
         }
 
-       // Debug.Log(MaxCoinCount[0].ToString());
+        // Debug.Log(MaxCoinCount[0].ToString());
         data = SaveSystem.LoadPlayer();
     }
     void Start()
@@ -86,62 +86,69 @@ public class PlayerTest : MonoBehaviour
 
         //start the saving system
         //level S and start menu do not trigger save system; 
-        if(SceneManager.GetActiveScene().buildIndex - 3 >= 0&&SceneManager.GetActiveScene().name != "LevelS") {
-        //save playerData
-       if(gs.touchDown)
-        {
-            
-            for(int i = 0; i<data.LevelInfos.Length; i++)
+        if (SceneManager.GetActiveScene().buildIndex - 3 >= 0 && SceneManager.GetActiveScene().name != "LevelS") {
+            //save playerData
+            if (gs.touchDown)
             {
+
+                for (int i = 0; i < data.LevelInfos.Length; i++)
+                {
                     MaxCoinCount[i] = data.LevelInfos[i];
-                         
-            }
-            if (MaxCoinCount[Level] < gs.CoinCount) {
-                MaxCoinCount[Level] = gs.CoinCount;
-            }
 
-            
-            if(data.CurrentLevel < Level)
-            {
-                maxLevel = Level;
-            }else
-            {
-                maxLevel = data.CurrentLevel;
-            }
-            SaveSystem.SavePlayer(this);
+                }
+                if (MaxCoinCount[Level] < gs.CoinCount) {
+                    MaxCoinCount[Level] = gs.CoinCount;
+                }
 
-        }
-       //saving system done
-       
+
+                if (data.CurrentLevel < Level)
+                {
+                    maxLevel = Level;
+                } else
+                {
+                    maxLevel = data.CurrentLevel;
+                }
+                SaveSystem.SavePlayer(this);
+
+            }
+            //saving system done
+
         }
         if (isAlive)
         {
+
+            Debug.Log("speed" + (rb.velocity.x + rb.velocity.y));
+
+
             //freezePoint bodytypechange
-            if(freezeP)
+            if (freezeP)
             {
-                Debug.Log("freezeTIme: " + (freezeBeginTime));
+                //Debug.Log("freezeTIme: " + (freezeBeginTime));
                 directionH = 0;
                 directionY = 0;
-                if(excuteAfterTime(freezeBeginTime,0.5f)) {
-                    movingFourWay();
+                if (excuteAfterTime(freezeBeginTime, 0.5f)) {
+                   // movingFourWay();
 
                     freezeBeginTime = 0;
                     freezeP = false;
                 }
-                
-            }else
+                Debug.Log(directionH + directionY);
+
+            } else
             {
+                
                 movingFourWay();
 
             }
             PlayerAnimation();
             PlayerFlip();
             colliderInBounce();
+            //Debug.Log(withinBouncing().ToString());             // /////////////////////////////////////////////////////////////////////////WITHIN
 
             // movingBasic();
             if (invincible)
             {
-                if(excuteAfterTime(invincibleBeginTime, T5invincibleTIme))
+                if (excuteAfterTime(invincibleBeginTime, T5invincibleTIme))
                 {
 
                     playerDeath();
@@ -158,9 +165,9 @@ public class PlayerTest : MonoBehaviour
         else
         {
 
-                //SceneManager.LoadScene("GameOver");
-                // pa.SetActive(true);
-                gs.deathPanel();
+            //SceneManager.LoadScene("GameOver");
+            // pa.SetActive(true);
+            gs.deathPanel();
 
         }
     }
@@ -169,23 +176,23 @@ public class PlayerTest : MonoBehaviour
     {
         var fingers = Lean.Touch.LeanTouch.Fingers;
 
-       // Debug.Log("There are currently " + fingers.Count + " fingers touching the screen.");
+        // Debug.Log("There are currently " + fingers.Count + " fingers touching the screen.");
         if (fingers.Count != 0)
         {
             var x = fingers[0].SwipeScaledDelta.x;
             var y = fingers[0].SwipeScaledDelta.y;
-         //   Debug.Log(fingers[0].SwipeScaledDelta);
+            //   Debug.Log(fingers[0].SwipeScaledDelta);
 
             if (Mathf.Abs(x) > Mathf.Abs(y))
             {
                 if (x > 0)
                 {
-                 //   Debug.Log("Right");
+                    //   Debug.Log("Right");
                     directionH = 1;
                 }
                 else if (x < 0)
                 {
-                //    Debug.Log("Left");
+                    //    Debug.Log("Left");
                     directionH = -1;
                 }
             }
@@ -193,12 +200,12 @@ public class PlayerTest : MonoBehaviour
             {
                 if (y > 0)
                 {
-                 //   Debug.Log("Up");
+                    //   Debug.Log("Up");
                     directionY = 1;
                 }
                 else if (y < 0)
                 {
-                  //  Debug.Log("Down");
+                    //  Debug.Log("Down");
                     directionY = -1;
                 }
             }
@@ -206,34 +213,34 @@ public class PlayerTest : MonoBehaviour
     }
     private void PlayerAnimation()
     {
- 
-            if (canMove)
-            {
-                myAnimator.SetBool("Running", false);
-            }
-            else
-            {
-                myAnimator.SetBool("Running", true);
-                if ((Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y)) > (originalSpeed + 10))
-                {
-                     //myAnimator.SetBool("Running", true);
-                    if(myAnimator.GetBool("Accelerating") == false) {
 
-                     myAnimator.SetBool("Accelerating", true);
+        if (canMove)
+        {
+            myAnimator.SetBool("Running", false);
+        }
+        else
+        {
+            myAnimator.SetBool("Running", true);
+            if ((Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y)) > (originalSpeed + 10))
+            {
+                //myAnimator.SetBool("Running", true);
+                if (myAnimator.GetBool("Accelerating") == false) {
+
+                    myAnimator.SetBool("Accelerating", true);
                     AudioSource.PlayClipAtPoint(AccelerationSFX, this.transform.position);
-                    }
-
-                }else
-                {
-                     myAnimator.SetBool("Accelerating", false);
-
-                    // myAnimator.SetBool("Running", true);
-
-
                 }
 
+            } else
+            {
+                myAnimator.SetBool("Accelerating", false);
+
+                // myAnimator.SetBool("Running", true);
+
+
+            }
+
         }
-       
+
 
 
     }
@@ -289,29 +296,29 @@ public class PlayerTest : MonoBehaviour
     {
 
         //check if player touched new wall
-  /*      bool isOriginalSpeed = Mathf.Approximately(Mathf.Round(Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y)), originalSpeed);
-        bool isAcceleratedSpeed = Mathf.Approximately(Mathf.Round(Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y)), speed);
-        bool isLessThanOriginalSpeed = originalSpeed > (Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y));
-        if (!isOriginalSpeed && !isAcceleratedSpeed && isLessThanOriginalSpeed)
+        /*      bool isOriginalSpeed = Mathf.Approximately(Mathf.Round(Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y)), originalSpeed);
+              bool isAcceleratedSpeed = Mathf.Approximately(Mathf.Round(Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y)), speed);
+              bool isLessThanOriginalSpeed = originalSpeed > (Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y));
+              if (!isOriginalSpeed && !isAcceleratedSpeed && isLessThanOriginalSpeed)
+              {
+                  canMove = true;
+                  if (!withinBouncing())
+                  {
+
+                      movingBasic();
+                  }
+              } else
+              {
+                  canMove = false;
+              }
+              */
+        if (Mathf.Abs(rb.velocity.x) > 1 || Mathf.Abs(rb.velocity.y) > 1)
+        {
+            canMove = false;
+        } else
         {
             canMove = true;
             if (!withinBouncing())
-            {
-
-                movingBasic();
-            }
-        } else
-        {
-            canMove = false;
-        }
-        */
-        if(Mathf.Abs(rb.velocity.x) > 1  ||Mathf.Abs(rb.velocity.y) > 1)
-        {
-            canMove = false;
-        }else
-        {
-            canMove = true;
-            if(!withinBouncing())
             {
                 movingBasic();
 
@@ -322,21 +329,21 @@ public class PlayerTest : MonoBehaviour
 
     private void movingBasic()
     {
-        
+
         directionH = Input.GetAxis("Horizontal");
         directionY = Input.GetAxis("Vertical");
         //touch control replace the keyentry;
         touchControl();
-       
-       /* Touch touch = Input.GetTouch(0);
-        float directionHT = touch.deltaPosition.x;
-        float directionYT = touch.deltaPosition.y;
-        //checktouch enabled or not;
-        if (Input.touchCount == 2)
-        {
-            directionH = directionHT;
-            directionY = directionYT;
-        }*/
+
+        /* Touch touch = Input.GetTouch(0);
+         float directionHT = touch.deltaPosition.x;
+         float directionYT = touch.deltaPosition.y;
+         //checktouch enabled or not;
+         if (Input.touchCount == 2)
+         {
+             directionH = directionHT;
+             directionY = directionYT;
+         }*/
         if (directionH > 0)
         {
 
@@ -361,12 +368,15 @@ public class PlayerTest : MonoBehaviour
         {
             rb.velocity = new Vector2(0, -1 * speed);
 
+        }else
+        {
+            Debug.Log("everything==0"+(directionH + directionY));
         }
     }
 
     public void playerDeath()
     {
-        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Harzard","Bullet")))
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Harzard", "Bullet")))
         {
             deathMove();
         }
@@ -384,7 +394,7 @@ public class PlayerTest : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Static;
             myBodyCollider.enabled = false;
             FindObjectOfType<Foot>().GetComponent<BoxCollider2D>().enabled = false;
-            
+
         }
 
     }
@@ -396,10 +406,10 @@ public class PlayerTest : MonoBehaviour
 
         if (leftBouncerDL && leftBouncerDR && leftBouncerUL && leftBouncerUR)
         {
-            if (canMove)
-            {
-                return false;
-            }
+            //  if (canMove)
+            //{
+            return false;
+            //}
         }
         return true;
     }
@@ -411,8 +421,8 @@ public class PlayerTest : MonoBehaviour
         {
             speed = speed * AccelerateMultiplier;
             rb.velocity = new Vector2(rb.velocity.x * AccelerateMultiplier, rb.velocity.y * AccelerateMultiplier);
-           // isAccelerating = true;
-           // myAnimator.SetBool("Accelerating", true);
+            // isAccelerating = true;
+            // myAnimator.SetBool("Accelerating", true);
 
         }
         if (collision.gameObject.tag == "Bullet")
@@ -435,8 +445,8 @@ public class PlayerTest : MonoBehaviour
         {
             speed = Mathf.RoundToInt(speed / AccelerateMultiplier);
             rb.velocity = new Vector2(rb.velocity.x / AccelerateMultiplier, rb.velocity.y / AccelerateMultiplier);
-           // myAnimator.SetBool("Accelerating",false);
-           // isAccelerating = false;
+            // myAnimator.SetBool("Accelerating",false);
+            // isAccelerating = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -444,10 +454,10 @@ public class PlayerTest : MonoBehaviour
         if (collision.tag == "BounceDL")
         {
             bounceTempSpeed = new Vector2(-rb.velocity.y, -rb.velocity.x);
-           // bouncing = true;
+            // bouncing = true;
             leftBouncerDL = false;
 
-        }else if(collision.tag == "BounceUR")
+        } else if (collision.tag == "BounceUR")
         {
             bounceTempSpeed = new Vector2(-rb.velocity.y, -rb.velocity.x);
             // bouncing = true;
@@ -459,22 +469,22 @@ public class PlayerTest : MonoBehaviour
             leftBouncerDR = false;
 
 
-        }else if(collision.tag == "BounceUL")
+        } else if (collision.tag == "BounceUL")
         {
             bounceTempSpeed = new Vector2(rb.velocity.y, rb.velocity.x);
             leftBouncerUL = false;
         }
 
-        if(collision.tag == "E4slow")
+        if (collision.tag == "E4slow")
         {
             handcuff.SetActive(true);
             speed = 10;
             if (Mathf.Abs(rb.velocity.x) > Mathf.Abs(rb.velocity.y))
             {
-                rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x)*10,0);
-            }else if(Mathf.Abs(rb.velocity.x) < Mathf.Abs(rb.velocity.y))
+                rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * 10, 0);
+            } else if (Mathf.Abs(rb.velocity.x) < Mathf.Abs(rb.velocity.y))
             {
-                rb.velocity = new Vector2(0,Mathf.Sign(rb.velocity.y) * 10);
+                rb.velocity = new Vector2(0, Mathf.Sign(rb.velocity.y) * 10);
 
             }
 
@@ -497,26 +507,26 @@ public class PlayerTest : MonoBehaviour
 
         }
 
-        if(collision.tag == "T3freezePoint")
+        if (collision.tag == "T3freezePoint")
         {
             rb.velocity = new Vector2(0, 0);
             freezeBeginTime = Time.time;
 
             freezeP = true;
-            this.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y + 0.96f);
+            transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y + 0.96f);
         }
         if (collision.tag == "T3freezePointR")
         {
 
             rb.velocity = new Vector2(0, 0);
             //disable player controll;
-           // rb.bodyType = RigidbodyType2D.Static;
+            // rb.bodyType = RigidbodyType2D.Static;
             //start a timer for 0,5 s
             freezeBeginTime = Time.time;
 
             freezeP = true;
 
-            this.transform.position = new Vector2(collision.transform.position.x-0.96f, collision.transform.position.y);
+            this.transform.position = new Vector2(collision.transform.position.x - 0.96f, collision.transform.position.y);
 
         }
         if (collision.tag == "T3freezePointL")
@@ -525,7 +535,7 @@ public class PlayerTest : MonoBehaviour
             freezeBeginTime = Time.time;
 
             freezeP = true;
-            this.transform.position = new Vector2(collision.transform.position.x+ 0.96f, collision.transform.position.y);
+            this.transform.position = new Vector2(collision.transform.position.x + 0.96f, collision.transform.position.y);
         }
         if (collision.tag == "T3freezePointUp")
         {
@@ -536,26 +546,26 @@ public class PlayerTest : MonoBehaviour
             this.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y - 0.96f);
         }
 
-        if(collision.tag == "T5Invincible")
+        if (collision.tag == "T5Invincible")
         {
             invincibleBeginTime = Time.time;
             invincible = true;
             invC.SetActive(true);
 
-            
+
         }
 
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if (canMove)
+        if (canMove && (collision.tag == "BounceDL" || collision.tag == "BounceDR"|| collision.tag == "BounceUL"|| collision.tag == "BounceUR"))
         {
             //  Debug.Log("BounceTempSpeed: = " + bounceTempSpeed);
 
             rb.velocity = new Vector2(Mathf.RoundToInt(bounceTempSpeed.x), Mathf.RoundToInt(bounceTempSpeed.y));
         }
-        
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -568,35 +578,37 @@ public class PlayerTest : MonoBehaviour
             leftBouncerUR = true;
 
         }
-        if(collision.tag == "BounceDR")
+        if (collision.tag == "BounceDR")
         {
             leftBouncerDR = true;
         }
-        if(collision.tag == "BounceUL")
+        if (collision.tag == "BounceUL")
         {
             leftBouncerUL = true;
         }
+
+        Debug.Log("see bnouncetag" + leftBouncerUR.ToString());
     }
 
-   /* public void PlayBump()
-    {
-        if (canMove)
-        {
-            if (canPlayBump)
-            {
-                AudioSource.PlayClipAtPoint(PlayerBumpSFX, transform.position);
-                canPlayBump = false;
-            }
-        } else
-        {
-            canPlayBump = true;
-        }
-    }*/
+    /* public void PlayBump()
+     {
+         if (canMove)
+         {
+             if (canPlayBump)
+             {
+                 AudioSource.PlayClipAtPoint(PlayerBumpSFX, transform.position);
+                 canPlayBump = false;
+             }
+         } else
+         {
+             canPlayBump = true;
+         }
+     }*/
 
-        //change colliderside within Bounce, prevent stuck;
+    //change colliderside within Bounce, prevent stuck;
     public void colliderInBounce()
     {
-        if (withinBouncing()) {
+        if (withinBouncing()|| !canMove) {
              myBodyCollider.size = new Vector2(1f,1f);
         }else
         {
@@ -604,6 +616,8 @@ public class PlayerTest : MonoBehaviour
             myBodyCollider.size = new Vector2(0.48f, 1f);
         }
     }
+
+    
 
 
     public bool excuteAfterTime(float beginTime, float waitTime)

@@ -31,7 +31,7 @@ public class Canno : MonoBehaviour
     {
         if (Time.time - timeBefore >= 1)
         {
-            var fireballInst = Instantiate(fireball, new Vector2(transform.position.x,transform.position.y-0.5f), Quaternion.Euler(new Vector2(0, 0)));
+            var fireballInst = Instantiate(fireball, new Vector2(transform.position.x,transform.position.y-0.8f), Quaternion.Euler(new Vector2(0, 0)));
             fireballInst.velocity = new Vector2(0f, -fireballSpeed);
             timeBefore = Time.time;
         }

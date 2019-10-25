@@ -54,7 +54,7 @@ public class E1loop : MonoBehaviour
             }
             else if (QuaternionsEqual(transform.rotation, Quaternion.Euler(0, 0, -90),0.0000004f))
             {
-                Debug.Log("match quaternion2");
+                //Debug.Log("match quaternion2");
                 Debug.Log(transform.rotation);
                 this.transform.rotation = Quaternion.Euler(0, 0, 180);
                 myrb.velocity = new Vector2(-speed, 0f);
@@ -64,7 +64,7 @@ public class E1loop : MonoBehaviour
             }
             else if (QuaternionsEqual(transform.rotation, Quaternion.Euler(0, 0, 180), 0.0000004f))
             {
-                Debug.Log("match quaternion3");
+               // Debug.Log("match quaternion3");
                 transform.rotation = Quaternion.Euler(0, 0, 90);
                 myrb.velocity = new Vector2(0f, speed);
 
@@ -73,7 +73,7 @@ public class E1loop : MonoBehaviour
             }
             else if (QuaternionsEqual(transform.rotation, Quaternion.Euler(0, 0, 90), 0.0000004f))
             {
-                Debug.Log("match quaternion4");
+                //Debug.Log("match quaternion4");
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 myrb.velocity = new Vector2(speed,0f);
 
