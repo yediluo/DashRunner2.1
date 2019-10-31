@@ -16,6 +16,8 @@ public class PlayerTest : MonoBehaviour
     [SerializeField] AudioClip DeathSFX;
     [SerializeField] GameObject invC;
     [SerializeField] GameObject handcuff;
+    [SerializeField] float slowSpeed;
+
     GameStats gs;
 
 
@@ -478,7 +480,7 @@ public class PlayerTest : MonoBehaviour
         if (collision.tag == "E4slow")
         {
             handcuff.SetActive(true);
-            speed = 10;
+            speed = slowSpeed;
             if (Mathf.Abs(rb.velocity.x) > Mathf.Abs(rb.velocity.y))
             {
                 rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * 10, 0);
