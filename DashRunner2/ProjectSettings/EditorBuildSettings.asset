@@ -48,6 +48,63 @@ EditorBuildSettings:
     path: Assets/Scenes/Level11.unity
     guid: a428a152398cf4b87ae3fa6b0efb7815
   - enabled: 1
+    path: Assets/Scenes/Level12.unity
+    guid: 866beea8323374b9694b0a586ad2b887
+  - enabled: 1
+    path: Assets/Scenes/Level13.unity
+    guid: 7c51ca96ccc8247f4bdfd5f2052c9129
+  - enabled: 1
+    path: Assets/Scenes/Level14.unity
+    guid: 14e8f7c672a664d47a78614e30c4378e
+  - enabled: 1
+    path: Assets/Scenes/Level15.unity
+    guid: 291d123f23f834615895f74c46bcde4a
+  - enabled: 1
+    path: Assets/Scenes/Level16.unity
+    guid: df8306646243c485f96b4ee97870a28e
+  - enabled: 1
+    path: Assets/Scenes/Level17.unity
+    guid: 393e3f2fdb6924923b1e0eaceb332d02
+  - enabled: 1
+    path: Assets/Scenes/Level18.unity
+    guid: fa26350ebee144fb984c77fa94bf2717
+  - enabled: 1
+    path: Assets/Scenes/Level19.unity
+    guid: 4178b6f2a94e14b0d8dbc6ee19f25f31
+  - enabled: 1
+    path: Assets/Scenes/Level20.unity
+    guid: a0b4c805afcdd45f28aeaf91e6810af5
+  - enabled: 1
+    path: Assets/Scenes/Level21.unity
+    guid: 953648d12853b4d0a9c7185b094b25ef
+  - enabled: 1
+    path: Assets/Scenes/Level22.unity
+    guid: 33cb5bafd8f404a2ebd94af49cf9f427
+  - enabled: 1
+    path: Assets/Scenes/Level23.unity
+    guid: c31dff725ffa94850b257e4b1d0e153f
+  - enabled: 1
+    path: Assets/Scenes/Level24.unity
+    guid: 09f7f9e33dca34242a98e88935f91261
+  - enabled: 1
+    path: Assets/Scenes/Level25.unity
+    guid: e6b30577b623b4930a7645350f5665a7
+  - enabled: 1
+    path: Assets/Scenes/Level26.unity
+    guid: 28437978181fd47cda1d8bdd022678cc
+  - enabled: 1
+    path: Assets/Scenes/Level27.unity
+    guid: a225c96bd9ca64471a5c00b71ccf2f83
+  - enabled: 1
+    path: Assets/Scenes/Level28.unity
+    guid: 257ca85bb07694363bdb5dcaf6856f86
+  - enabled: 1
+    path: Assets/Scenes/Level29.unity
+    guid: 959998ec8150042e3a50dda51a2a9db8
+  - enabled: 1
+    path: Assets/Scenes/Level30.unity
+    guid: 5136c2bea6d974e47aac20f47f5ebc2c
+  - enabled: 1
     path: Assets/Scenes/LevelS.unity
     guid: 76c1ea51ce795f148a86dd8a08ca54a5
   m_configObjects: {}

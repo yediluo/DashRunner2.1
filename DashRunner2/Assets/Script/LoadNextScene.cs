@@ -28,7 +28,7 @@ public class LoadNextScene : MonoBehaviour
 
     public void LoadScene()
     {
-        if (SceneManager.GetActiveScene().name=="Level11"||SceneManager.GetActiveScene().name=="LevelS")
+        if (SceneManager.GetActiveScene().name=="Level30"||SceneManager.GetActiveScene().name=="LevelS")
         {
             SceneManager.LoadScene(0);
         }
@@ -101,6 +101,104 @@ public class LoadNextScene : MonoBehaviour
     {
         SceneManager.LoadScene(13);
     }
+
+    public void loadLevel12()
+    {
+        SceneManager.LoadScene(14);
+    }
+
+
+    public void loadLevel13()
+    {
+        SceneManager.LoadScene(15);
+    }
+
+    public void loadLevel14()
+    {
+        SceneManager.LoadScene(16);
+    }
+
+    public void loadLevel15()
+    {
+        SceneManager.LoadScene(17);
+    }
+
+    public void loadLevel16()
+    {
+        SceneManager.LoadScene(18);
+    }
+
+    public void loadLevel17()
+    {
+        SceneManager.LoadScene(19);
+    }
+
+
+    public void loadLevel18()
+    {
+        SceneManager.LoadScene(20);
+    }
+
+    public void loadLevel19()
+    {
+        SceneManager.LoadScene(21);
+    }
+
+    public void loadLevel20()
+    {
+        SceneManager.LoadScene(22);
+    }
+
+    public void loadLevel21()
+    {
+        SceneManager.LoadScene(23);
+    }
+
+    public void loadLevel22()
+    {
+        SceneManager.LoadScene(24);
+    }
+
+    public void loadLevel23()
+    {
+        SceneManager.LoadScene(25);
+    }
+
+    public void loadLevel24()
+    {
+        SceneManager.LoadScene(26);
+    }
+
+    public void loadLevel25()
+    {
+        SceneManager.LoadScene(27);
+    }
+
+    public void loadLevel26()
+    {
+        SceneManager.LoadScene(28);
+    }
+
+    public void loadLevel27()
+    {
+        SceneManager.LoadScene(29);
+    }
+
+    public void loadLevel28()
+    {
+        SceneManager.LoadScene(30);
+    }
+
+    public void loadLevel29()
+    {
+        SceneManager.LoadScene(31);
+    }
+
+    public void loadLevel30()
+    {
+        SceneManager.LoadScene(32);
+    }
+
 
     public void loadCurrent()
     {
