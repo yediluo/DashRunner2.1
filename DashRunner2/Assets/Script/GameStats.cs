@@ -25,6 +25,7 @@ public class GameStats : MonoBehaviour
     [SerializeField]public  Image Battery;
     [SerializeField] Sprite[] batterySprites;
     [SerializeField] Button[] PauseResume;
+    [SerializeField] Text levelTitle;
      public float timeMax;
 
 
@@ -46,6 +47,7 @@ public class GameStats : MonoBehaviour
         player = FindObjectOfType<PlayerTest>();
        sceneName = SceneManager.GetActiveScene().name;
         initTime = Time.time;
+        levelTitle.text = sceneName;
         //timeMax = 35f;
     }
 
@@ -206,6 +208,7 @@ public class GameStats : MonoBehaviour
             if(batteryPercentage > 11f/12f)
             {
                 Battery.sprite = batterySprites[0];
+
             }else if(batteryPercentage > 11f / 12f)
             {
                 Battery.sprite = batterySprites[0];
@@ -214,6 +217,7 @@ public class GameStats : MonoBehaviour
             else if(batteryPercentage > 10f / 12f)
             {
                 Battery.sprite = batterySprites[1];
+                levelTitle.enabled = false;
 
             }
             else if (batteryPercentage > 9f / 12f)
