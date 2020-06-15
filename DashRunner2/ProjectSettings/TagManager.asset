@@ -66,6 +66,9 @@ TagManager:
   - name: Enemy
     uniqueID: 1134536987
     locked: 0
+  - name: explosion
+    uniqueID: 583293651
+    locked: 0
   - name: Bounce
     uniqueID: 2127562417
     locked: 0
