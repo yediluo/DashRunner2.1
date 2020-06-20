@@ -339,6 +339,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 8035420a807dc42a587702d31acd9e90,
         type: 3}
+    - target: {fileID: 1070216912, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
+      propertyPath: m_Name
+      value: LSButton
+      objectReference: {fileID: 0}
     - target: {fileID: 1070216913, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -363,10 +367,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1070216913, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: loadLevelSelection2
+      objectReference: {fileID: 0}
     - target: {fileID: 1070216914, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0a426b55b8dea4935b9321b5d5084a5b,
+      objectReference: {fileID: 21300000, guid: df9880a7db47543b2a1ddec9fdfe737c,
         type: 3}
     - target: {fileID: 1070216916, guid: 95a26c7576b7cc14ba18496fc21e57ec, type: 3}
       propertyPath: m_AnchoredPosition.x

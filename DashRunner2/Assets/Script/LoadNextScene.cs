@@ -55,6 +55,12 @@ public class LoadNextScene : MonoBehaviour
         SceneManager.LoadScene("LevelSelection");
 
     }
+
+    public void loadLevelSelection2()
+    {
+        SceneManager.LoadScene("LevelSelect Peach");
+    }
+
     public void loadLevel1()
     {
         SceneManager.LoadScene(3);
@@ -204,5 +210,6 @@ public class LoadNextScene : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 
 }

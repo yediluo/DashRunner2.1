@@ -14,10 +14,10 @@ public class PlayerData {
     public int CurrentLevel;
 
 
+
     public PlayerData(PlayerTest player)
     {
         LevelInfos = new int[200];
-        
             for (int i = 0; i < LevelInfos.Length; i++)
             {
                 LevelInfos[i] = player.MaxCoinCount[i];
