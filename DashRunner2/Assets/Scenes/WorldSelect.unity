@@ -964,7 +964,7 @@ MonoBehaviour:
   peachLockImage: {fileID: 1991945203}
   peachLockMessage: {fileID: 3844587}
   CoinCountTest: {fileID: 1737617949}
-  peachWorldCoinLimit: 20
+  peachWorldCoinLimit: 28
 --- !u!4 &923211588
 Transform:
   m_ObjectHideFlags: 0
